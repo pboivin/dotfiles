@@ -261,3 +261,23 @@ command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
 
 " Comment : Insert // prefix
 command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
+
+" Switch to soft tabs
+function! SetSoftTabsFn(width)
+    execute "set shiftwidth=" . a:width
+    execute "set softtabstop=" . a:width
+    set smarttab
+    set expandtab
+    set tabstop=8
+endfunction
+command! -nargs=1 SetSoftTabs call SetSoftTabsFn("<args>")
+
+" Switch to hard tabs
+function! SetHardTabsFn()
+    set shiftwidth=8
+    set softtabstop=8
+    set nosmarttab
+    set noexpandtab
+    set tabstop=8
+endfunction
+command! SetHardTabs call SetHardTabsFn()
