@@ -140,7 +140,7 @@ function! GrepFn(search)
     execute 'vimgrep ' . a:search . ' **/*'
     execute 'cwindow'
 endfunction
-command! -nargs=1 Grep call FuncFn("<args>")
+command! -nargs=1 Grep call GrepFn("<args>")
 
 " Grep help files
 function! GrepHelpFn(search)
