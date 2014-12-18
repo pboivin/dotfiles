@@ -3,16 +3,36 @@
 "
 " References :
 "   http://vim.wikia.com/wiki/Example_vimrc
+"   https://github.com/gmarik/Vundle.vim
 
 "==============================================================================
 " Plugins
 "==============================================================================
 
-" Plugin manager
-if exists('g:loaded_pathogen')
-    call pathogen#infect() 
-    Helptags 
-endif   
+" Initialize Vundle
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    " plugins on GitHub
+    Plugin 'mattn/emmet-vim'
+    Plugin 'vim-scripts/Align'
+    Plugin 'vim-scripts/TextFormat'
+    Plugin 'tpope/vim-surround'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'jistr/vim-nerdtree-tabs'
+    Plugin 'kien/ctrlp.vim'
+
+    " filetypes
+    Plugin 'tpope/vim-markdown'
+
+call vundle#end()
+filetype plugin on
 
 "==============================================================================
 " Editor
@@ -213,8 +233,8 @@ set guifont=Monospace\ 9
 command! Font :set guifont=*
 
 " X11 copy and paste
-noremap <C-K> "+y
-noremap <C-P> "+P
+noremap! <C-K> "+y
+noremap! <C-P> "+P
 
 " Save with Ctrl+S
 noremap <C-s> :w<CR>
