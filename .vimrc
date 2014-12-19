@@ -1,5 +1,5 @@
 " A basic VIM configuration file
-" Assembled Patrick Boivin from various sources
+" Assembled by Patrick Boivin from various sources
 "
 " References :
 "   http://vim.wikia.com/wiki/Example_vimrc
