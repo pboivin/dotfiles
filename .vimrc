@@ -34,6 +34,9 @@ call vundle#begin()
 call vundle#end()
 filetype plugin on
 
+" Change CtrlP mapping
+let g:ctrlp_map = '<Leader>p'
+
 "==============================================================================
 " Editor
 "==============================================================================
@@ -146,7 +149,7 @@ set ignorecase
 set smartcase
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <c-l> :nohl<CR><C-L>
 
 " Start with highlighting off
 nohl
@@ -233,8 +236,8 @@ set guifont=Monospace\ 9
 command! Font :set guifont=*
 
 " X11 copy and paste
-noremap! <C-K> "+y
-noremap! <C-P> "+P
+noremap <C-k> "+y
+noremap <C-p> "+P
 
 " Save with Ctrl+S
 noremap <C-s> :w<CR>
