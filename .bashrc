@@ -1,5 +1,5 @@
 # A basic Bash configuration file
-# Assembled Patrick Boivin from various sources
+# Assembled by Patrick Boivin from various sources
 
 #=============================================================================
 # Path
