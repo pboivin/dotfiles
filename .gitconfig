@@ -1,0 +1,10 @@
+# A basic Git configuration file
+#
+# Reference : 
+#   http://git-scm.com/docs/git-config
+
+[user]
+	email = pboivin@gmail.com
+	name = Patrick Boivin
+[credential]
+	helper = cache
