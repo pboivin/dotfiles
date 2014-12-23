@@ -30,6 +30,8 @@ call vundle#begin()
 
     " filetypes
     Plugin 'tpope/vim-markdown'
+    Plugin 'tpope/vim-haml'
+    Plugin 'groenewege/vim-less'
 
 call vundle#end()
 filetype plugin on
