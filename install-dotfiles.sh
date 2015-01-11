@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILES=".bashrc .vimrc .gitrc"
+FILES=".bashrc .vimrc .gitconfig"
 
 for f in $FILES
 do
