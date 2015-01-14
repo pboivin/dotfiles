@@ -144,3 +144,12 @@ then
 
     gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>comma']"
 fi
+
+#=============================================================================
+# Local config
+#=============================================================================
+
+if [ -e ~/.bashrc_local ]
+then
+    . ~/.bashrc_local
+fi
