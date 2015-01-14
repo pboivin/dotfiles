@@ -174,6 +174,9 @@ function! GrepHelpFn(search)
 endfunction
 command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 
+" Search for visually selected text
+vnoremap // y/<c-r>"<cr>
+
 "==============================================================================
 " Misc mappings
 "==============================================================================
@@ -287,6 +290,9 @@ command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
 " Comment : Insert // prefix
 command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
 
+" Find common debug comments
+command! FindDebugComments /\(debug\|todo\|fixme\)
+
 " Switch to soft tabs
 function! SetSoftTabsFn(width)
     execute "set shiftwidth=" . a:width
@@ -306,3 +312,11 @@ function! SetHardTabsFn()
     set tabstop=8
 endfunction
 command! SetHardTabs call SetHardTabsFn()
+
+"==============================================================================
+" Local config
+"==============================================================================
+
+if !empty(glob("~/.vimrc_local"))
+    source ~/.vimrc_local
+endif
