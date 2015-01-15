@@ -6,7 +6,16 @@
 [user]
 	email = pboivin@gmail.com
 	name = Patrick Boivin
+
 [credential]
 	helper = cache
+
 [push]
 	default = simple
+
+[core]
+        editor = vim
+
+
+[color]
+        ui = auto
