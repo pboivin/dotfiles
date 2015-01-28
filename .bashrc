@@ -132,20 +132,6 @@ alias si="cd $HOME/Sites"
 alias wo="cd $HOME/Workspace"
 
 #=============================================================================
-# Ubuntu
-#=============================================================================
-
-if [ "$(uname -a | grep -o Ubuntu)" == "Ubuntu" ]
-then
-    # Unity keyboard shortcuts reset bug
-    #
-    # Reference : 
-    #   http://askubuntu.com/questions/211851/how-to-set-keyboard-shortcuts-from-a-script
-
-    gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>comma']"
-fi
-
-#=============================================================================
 # Local config
 #=============================================================================
 
