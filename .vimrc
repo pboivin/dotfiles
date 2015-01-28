@@ -314,6 +314,27 @@ endfunction
 command! SetHardTabs call SetHardTabsFn()
 
 "==============================================================================
+" File formats
+"==============================================================================
+
+" ref: http://vim.wikia.com/wiki/File_format
+
+function! DosToUnixFn()
+    update
+    edit ++ff=dos
+    setlocal ff=unix
+    write
+endfunction
+command! DosToUnix call DosToUnixFn()
+
+function! UnixToDosFn()
+    update
+    edit ++ff=dos
+    write
+endfunction
+command! UnixToDos call UnixToDosFn()
+
+"==============================================================================
 " Local config
 "==============================================================================
 
