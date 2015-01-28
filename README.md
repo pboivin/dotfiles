@@ -32,4 +32,4 @@ This will install and configure Vundle, a plugin manager for Vim. This will also
 Disclaimer
 ----------
 
-This is a work in progress. 
+This is a work in progress :)
