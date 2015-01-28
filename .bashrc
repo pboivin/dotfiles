@@ -68,8 +68,8 @@ fi
 
 # Shell
 
-alias l='ls -1'
-alias ll='ls -lh'
+alias l='ls -lh'
+alias ll='ll -A'
 alias la='ls -A'
 alias l2='ls *'
 
