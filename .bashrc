@@ -69,7 +69,7 @@ fi
 # Shell
 
 alias l='ls -lh'
-alias ll='ll -A'
+alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
 
