@@ -68,8 +68,8 @@ fi
 
 # Shell
 
-alias l='ls -1'
-alias ll='ls -lh'
+alias l='ls -lh'
+alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
 
@@ -123,27 +123,13 @@ alias vimm='vim -u NONE'
 
 alias gd="git diff"
 alias gp="git log -p"
-alias gl="git log"
+alias gl="git log --name-status"
 alias gs="git status"
 
 # Places
 
 alias si="cd $HOME/Sites"
 alias wo="cd $HOME/Workspace"
-
-#=============================================================================
-# Ubuntu
-#=============================================================================
-
-if [ "$(uname -a | grep -o Ubuntu)" == "Ubuntu" ]
-then
-    # Unity keyboard shortcuts reset bug
-    #
-    # Reference : 
-    #   http://askubuntu.com/questions/211851/how-to-set-keyboard-shortcuts-from-a-script
-
-    gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>comma']"
-fi
 
 #=============================================================================
 # Local config
