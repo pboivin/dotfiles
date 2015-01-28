@@ -123,7 +123,7 @@ alias vimm='vim -u NONE'
 
 alias gd="git diff"
 alias gp="git log -p"
-alias gl="git log"
+alias gl="git log --name-status"
 alias gs="git status"
 
 # Places
