@@ -8,16 +8,9 @@
 PATH=$HOME/bin:$PATH
 
 # Node.js
-#
-# References : 
-#   https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-#   http://stackoverflow.com/questions/19352976/npm-modules-wont-install-globally-without-sudo
-
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
-
-npm config set prefix $NPM_PACKAGES
 
 #=============================================================================
 # Prompt
