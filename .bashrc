@@ -17,7 +17,10 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
 
-npm config set prefix $NPM_PACKAGES
+if [ "x1" == "x$(npm 2>&1 >/dev/null; echo $?)" ]
+then
+    npm config set prefix $NPM_PACKAGES
+fi
 
 #=============================================================================
 # Prompt
