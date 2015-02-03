@@ -27,6 +27,10 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'kien/ctrlp.vim'
+    "Plugin 'Valloric/YouCompleteMe'
+
+    " plugins on vim.org
+    Plugin 'phpcomplete.vim'
 
     " filetypes
     Plugin 'tpope/vim-markdown'
