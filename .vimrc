@@ -65,8 +65,8 @@ set nobackup
 " Alternatively, set a backup directory
 "#  set backupdir=~/.vim/backup
 
-" No in-place "file.swp"
-set noswapfile
+" Enable swap files
+set swapfile
 
 " Alternatively,
 "#  set directory=~/.vim/swap
@@ -116,9 +116,10 @@ set confirm
 set t_vb=
 
 " Mouse integration
-"   a- Enable use of the mouse for all modes
-"   i- Enable for Insert mode only
-set mouse=a
+"   a- All modes
+"   i- Insert mode only
+"   n- Normal mode only (useful for copy/pasting with Xorg buffer while in insert mode)
+set mouse=n
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
