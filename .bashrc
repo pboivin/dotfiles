@@ -66,6 +66,10 @@ alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
 
+function lh {
+    env ls -a1F | perl -e 'foreach (sort <>) { print if /^\./ && !/^\.\.?\/$/ }'
+}
+
 alias bk='cd "$OLDPWD"'
 
 function ccd {
