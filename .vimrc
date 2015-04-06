@@ -31,6 +31,7 @@ call vundle#begin()
 
     " plugins on vim.org
     Plugin 'phpcomplete.vim'
+    Plugin 'loremipsum'
 
     " filetypes
     Plugin 'tpope/vim-markdown'
