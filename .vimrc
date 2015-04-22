@@ -44,6 +44,10 @@ filetype plugin on
 " Change CtrlP mapping
 let g:ctrlp_map = '<Leader>p'
 
+" NERDTree
+let g:nerdtree_tabs_open_on_gui_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 1
+
 "==============================================================================
 " Editor
 "==============================================================================
