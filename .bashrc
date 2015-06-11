@@ -47,7 +47,7 @@ PS1=''$(color_normal $COLOR_YELLOW)'($(date +%H:%M:%S)) \u@'$PS1_NAME' : '$(colo
 if [ "$(uname)" == "Linux" ]
 then
     alias ls='env ls -FC --color=auto --group-directories-first'
-    alias l1='env ls -1F --color=auto'
+    alias l1='env ls -1Fv --color=auto'
     alias go='gnome-open'
 fi
 
@@ -77,6 +77,11 @@ function ccd {
 }
 
 alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 alias dus='du -s * . | sort -n'
 
@@ -119,6 +124,7 @@ alias vimm='vim -u NONE'
 # Git
 
 alias gd="git diff"
+alias gdh="git diff HEAD"
 alias gp="git log -p"
 alias gl="git log"
 alias gll="git log --name-status"
