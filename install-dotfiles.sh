@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILES=".bashrc .vimrc .gitconfig .npmrc"
+FILES=".bashrc .vimrc .vimrc-plugins .gitconfig .npmrc"
 
 for f in $FILES; do
     NEW="$PWD/$f"

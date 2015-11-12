@@ -9,44 +9,9 @@
 " Plugins
 "==============================================================================
 
-" Initialize Vundle
-
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
-
-    " plugins on GitHub
-    Plugin 'mattn/emmet-vim'
-    Plugin 'vim-scripts/Align'
-    Plugin 'vim-scripts/TextFormat'
-    Plugin 'tpope/vim-surround'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'
-    Plugin 'kien/ctrlp.vim'
-    "Plugin 'Valloric/YouCompleteMe'
-
-    " plugins on vim.org
-    Plugin 'phpcomplete.vim'
-    Plugin 'loremipsum'
-
-    " filetypes
-    Plugin 'tpope/vim-markdown'
-    Plugin 'tpope/vim-haml'
-    Plugin 'groenewege/vim-less'
-
-call vundle#end()
-filetype plugin on
-
-" Change CtrlP mapping
-let g:ctrlp_map = '<Leader>p'
-
-" NERDTree
-let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_open_on_console_startup = 1
+if !empty(glob("~/.vimrc-plugins"))
+    source ~/.vimrc-plugins
+endif
 
 "==============================================================================
 " Editor
