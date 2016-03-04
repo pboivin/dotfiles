@@ -26,6 +26,7 @@ call vundle#begin()
     Plugin 'tpope/vim-markdown'
     Plugin 'tpope/vim-haml'
     Plugin 'groenewege/vim-less'
+    Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin on
