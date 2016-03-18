@@ -17,6 +17,7 @@ call vundle#begin()
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'kien/ctrlp.vim'
     "Plugin 'Valloric/YouCompleteMe'
+    Plugin 'vim-scripts/CycleColor'
 
     " plugins on vim.org
     Plugin 'phpcomplete.vim'
