@@ -259,12 +259,6 @@ function! AveOffFn()
 endfunction
 command! NoAVE call AveOffFn()
 
-" Comment : Insert # prefix
-command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
-
-" Comment : Insert // prefix
-command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
-
 " Find common debug comments
 command! FindDebugComments /\(debug\|todo\|fixme\)
 
@@ -308,6 +302,48 @@ function! UnixToDosFn()
     write
 endfunction
 command! UnixToDos call UnixToDosFn()
+
+"==============================================================================
+" Code format
+"==============================================================================
+
+" Comment : Insert # prefix
+command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
+
+" Comment : Insert // prefix
+command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
+
+" Format HTML
+function! FormatHtmlFn()
+    filetype indent on
+    set filetype=html
+    set smartindent
+endfunction
+command! FormatHtml call FormatHtmlFn()
+
+" Format CSS
+function! FormatCssFn()
+    filetype indent on
+    set filetype=css
+    set smartindent
+endfunction
+command! FormatCss call FormatCssFn()
+
+" Format JS
+function! FormatJsFn()
+    filetype indent on
+    set filetype=javascript
+    set smartindent
+endfunction
+command! FormatJs call FormatJsFn()
+
+" Format PHP
+function! FormatPhpFn()
+    filetype indent on
+    set filetype=php
+    set smartindent
+endfunction
+command! FormatPhp call FormatPhpFn()
 
 "==============================================================================
 " Local config
