@@ -12,12 +12,13 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'vim-scripts/Align'
     Plugin 'vim-scripts/TextFormat'
-    Plugin 'tpope/vim-surround'
+            Plugin 'tpope/vim-surround'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'kien/ctrlp.vim'
     "Plugin 'Valloric/YouCompleteMe'
     Plugin 'vim-scripts/CycleColor'
+    Plugin 'nathanaelkane/vim-indent-guides'
 
     " plugins on vim.org
     Plugin 'phpcomplete.vim'
@@ -38,3 +39,10 @@ let g:ctrlp_map = '<Leader>p'
 " NERDTree
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
+
+" vim-indent-guides
+" <leader>ig
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
+
