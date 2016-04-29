@@ -110,8 +110,8 @@ set expandtab
 " Size of a hard tabstop
 set tabstop=8
 
-" No wrap by defaut but if we do enable it, don't break words
-set nowrap
+" Wrap long lines, don't break words
+set wrap
 set linebreak
 
 "==============================================================================
