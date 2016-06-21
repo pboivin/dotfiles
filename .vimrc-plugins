@@ -12,7 +12,7 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'vim-scripts/Align'
     Plugin 'vim-scripts/TextFormat'
-            Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-surround'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'kien/ctrlp.vim'
@@ -29,6 +29,9 @@ call vundle#begin()
     Plugin 'tpope/vim-haml'
     Plugin 'groenewege/vim-less'
     Plugin 'kchmck/vim-coffee-script'
+
+    " color schemes
+    Plugin 'cohlin/vim-colorschemes'
 
 call vundle#end()
 filetype plugin on
