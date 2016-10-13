@@ -259,9 +259,6 @@ function! AveOffFn()
 endfunction
 command! NoAVE call AveOffFn()
 
-" Find common debug comments
-command! FindDebugComments /\(debug\|todo\|fixme\)
-
 " Switch to soft tabs
 function! SetSoftTabsFn(width)
     execute "set shiftwidth=" . a:width
@@ -344,6 +341,13 @@ function! FormatPhpFn()
     set smartindent
 endfunction
 command! FormatPhp call FormatPhpFn()
+
+"==============================================================================
+" Code search
+"==============================================================================
+
+command! FindDebugComments /\(debug\|todo\|fixme\)
+command! FindPhpTags /<*?>*
 
 "==============================================================================
 " Local config
