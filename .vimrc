@@ -114,6 +114,10 @@ set tabstop=8
 set wrap
 set linebreak
 
+" Paste mode
+command! Paste :set paste
+command! NoPaste :set nopaste
+
 "==============================================================================
 " Search
 "==============================================================================
