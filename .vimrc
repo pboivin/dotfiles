@@ -360,3 +360,7 @@ command! FindPhpTags /<*?>*
 if !empty(glob("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
+
+" Read extra .vimrc from current directory
+set exrc
+
