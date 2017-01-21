@@ -16,13 +16,25 @@ function backup_file() {
     local BACKUP="$ORIG-bk-$(date +%s)"
 
     if [ -e "$ORIG" ]; then
+        echo "Backing up $ORIG"
         mv "$ORIG" "$BACKUP" 
     fi
+}
+
+function template_file() {
+    local TMP="$1"
+    local OUTPUT="$2"
+
+    echo "Building $TMP"
+
+    bash "$TMP" > "$OUTPUT"
 }
 
 function install_file() {
     local BUILD="$1"
     local ORIG="$2"
+
+    echo "Installing $ORIG"
 
     if [ "$LINK" == "true" ]; then
         ln -s "$BUILD" "$ORIG"
@@ -60,7 +72,7 @@ for f in $TEMPLATES; do
 
     backup_file "$ORIG"
     backup_file "$BUILD"
-    bash "$TEMPLATE" > "$BUILD"
+    template_file "$TEMPLATE" "$BUILD"
     install_file "$BUILD" "$ORIG"
 done
 
@@ -70,6 +82,7 @@ done
 if [ "$(uname)" == "Linux" ]
 then
     # Nothing here
+    echo
 fi
 
 if [ "$(uname)" == "Darwin" ]
@@ -80,4 +93,8 @@ then
     backup_file "$PROFILE"
     ln -s "$BASHRC" "$PROFILE"
 fi
+
+echo
+echo "DONE!"
+echo
 
