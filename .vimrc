@@ -184,8 +184,11 @@ noremap  <C-Down> 9jzz
 inoremap <C-Down> <Esc>9jzza
 noremap  <C-Up>   9kzz
 inoremap <C-Up>   <Esc>9kzza
-noremap  <C-f>    <C-f>zz
-noremap  <C-b>    <C-b>zz
+
+noremap  <C-f> 9jzz
+inoremap <C-f> <Esc>9jzza
+noremap  <C-b> 9kzz
+inoremap <C-b> <Esc>9kzza
 
 " Fine-grained word jumping
 "   Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn' 
