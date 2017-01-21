@@ -1,0 +1,1 @@
+echo "prefix=$HOME/.npm-packages"
