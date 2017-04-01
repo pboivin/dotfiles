@@ -27,8 +27,8 @@ call vundle#begin()
     " snippets and code completion
     " ----------------------------
     Plugin 'mattn/emmet-vim'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
+"    Plugin 'SirVer/ultisnips'
+"    Plugin 'honza/vim-snippets'
     Plugin 'phpcomplete.vim'
     Plugin 'loremipsum'
 "   Plugin 'Valloric/YouCompleteMe'
@@ -39,6 +39,7 @@ call vundle#begin()
     Plugin 'tpope/vim-haml'
     Plugin 'groenewege/vim-less'
     Plugin 'kchmck/vim-coffee-script'
+    Plugin 'jwalton512/vim-blade'
 
     " color schemes
     " -------------
