@@ -44,6 +44,7 @@ call vundle#begin()
     " color schemes
     " -------------
     Plugin 'cohlin/vim-colorschemes'
+    Plugin 'zcodes/vim-colors-basic'
 "   Plugin 'vim-scripts/CycleColor'
 
 call vundle#end()

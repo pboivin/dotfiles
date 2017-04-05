@@ -270,21 +270,21 @@ command! NoAVE call AveOffFn()
 function! SetSoftTabsFn(width)
     execute "set shiftwidth=" . a:width
     execute "set softtabstop=" . a:width
+    set tabstop=8
     set smarttab
     set expandtab
-    set tabstop=8
 endfunction
 command! -nargs=1 SetSoftTabs call SetSoftTabsFn("<args>")
 
 " Switch to hard tabs
-function! SetHardTabsFn()
-    set shiftwidth=8
-    set softtabstop=8
+function! SetHardTabsFn(width)
+    execute "set shiftwidth=" . a:width
+    execute "set softtabstop=" . a:width
+    execute "set tabstop=" . a:width
     set nosmarttab
     set noexpandtab
-    set tabstop=8
 endfunction
-command! SetHardTabs call SetHardTabsFn()
+command! -nargs=1 SetHardTabs call SetHardTabsFn("<args>")
 
 "==============================================================================
 " File formats
