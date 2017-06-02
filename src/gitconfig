@@ -1,7 +1,8 @@
 # A basic Git configuration file
 #
-# Reference : 
+# References : 
 #   http://git-scm.com/docs/git-config
+#   https://github.com/mzabriskie/dotfiles
 
 [user]
 	email = pboivin@gmail.com
