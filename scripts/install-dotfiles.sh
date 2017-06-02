@@ -3,82 +3,70 @@
 #
 # Config
 #
-LINK="true"
-FILES=".bashrc .vimrc .vimrc-plugins .gitconfig"
-TEMPLATES=".npmrc"
-BUILD_DIR="build"
+
+LINK="true"    # otherwise files will be copied
+SRC="$PWD/src"
+DEST="$HOME"
+DOTFILES="bashrc vimrc vimrc-plugins gitconfig"
 
 #
 # Helper functions
 #
+
 function backup_file() {
-    local ORIG="$1"
-    local BACKUP="$ORIG-bk-$(date +%s)"
+    local original_file="$1"
+    local backup_file="$ORIG-bk-$(date +%s)"
 
-    if [ -e "$ORIG" ]; then
-        echo "Backing up $ORIG"
-        mv "$ORIG" "$BACKUP" 
+    if [ -e "$original_file" ]; then
+        echo "Backing up $original_file"
+        mv "$original_file" "$backup_file" 
     fi
-}
-
-function template_file() {
-    local TMP="$1"
-    local OUTPUT="$2"
-
-    echo "Building $TMP"
-
-    bash "$TMP" > "$OUTPUT"
 }
 
 function install_file() {
-    local BUILD="$1"
-    local ORIG="$2"
+    local from_file="$1"
+    local to_file="$2"
 
-    echo "Installing $ORIG"
+    echo "Installing $TO"
 
     if [ "$LINK" == "true" ]; then
-        ln -s "$BUILD" "$ORIG"
+        ln -s "$from_file" "$to_file"
     else
-        cp -r "$BUILD" "$ORIG"
+        cp -r "$from_file" "$to_file"
     fi
 }
 
 #
-# Build directory for templates
+# Check if we're in the dotfiles directory
 #
-if [ -n $BUILD_DIR ]; then
-    mkdir $BUILD_DIR
+
+if [ -e "$SRC" ]; then
+    echo 
+    echo "Ready"
+    echo 
+else
+    echo 
+    echo "Error: can't find the 'src/' folder"
+    echo 
+    exit 1
 fi
 
 #
-# Install static files
+# Install all static dotfiles
 #
-for f in $FILES; do
-    NEW="$PWD/$f"
-    ORIG="$HOME/$f"
-    BACKUP="$HOME/$f-bk-$(date +%s)"
 
-    backup_file "$ORIG"
-    install_file "$NEW" "$ORIG"
+for file in $DOTFILES; do
+    from_file="$SRC/$file"
+    to_file="$DEST/.$file"
+
+    backup_file "$to_file"
+    install_file "$from_file" "$to_file"
 done
 
 #
-# Build and install templated files
+# Platform-specific stuff
 #
-for f in $TEMPLATES; do
-    TEMPLATE="$PWD/$f.template"
-    BUILD="$PWD/$BUILD_DIR/$f"
-    ORIG="$HOME/$f"
 
-    backup_file "$ORIG"
-    backup_file "$BUILD"
-    template_file "$TEMPLATE" "$BUILD"
-    install_file "$BUILD" "$ORIG"
-done
-
-#
-# Platform-specific
-#
 if [ "$(uname)" == "Linux" ]
 then
     # Nothing here
@@ -87,11 +75,11 @@ fi
 
 if [ "$(uname)" == "Darwin" ]
 then
-    BASHRC="$HOME/.bashrc"
-    PROFILE="$HOME/.profile"
+    bashrc_file="$DEST/.bashrc"
+    profile_file="$DEST/.profile"
 
-    backup_file "$PROFILE"
-    ln -s "$BASHRC" "$PROFILE"
+    backup_file "$profile_file"
+    ln -s "$bashrc_file" "$profile_file"
 fi
 
 echo
