@@ -21,17 +21,13 @@ call vundle#begin()
     " text formatting
     " ---------------
 "   Plugin 'vim-scripts/Align'
-"   Plugin 'vim-scripts/TextFormat'
 "   Plugin 'tpope/vim-surround'
 
     " snippets and code completion
     " ----------------------------
     Plugin 'mattn/emmet-vim'
-"    Plugin 'SirVer/ultisnips'
-"    Plugin 'honza/vim-snippets'
     Plugin 'phpcomplete.vim'
     Plugin 'loremipsum'
-"   Plugin 'Valloric/YouCompleteMe'
 
     " filetypes
     " ---------
@@ -45,7 +41,6 @@ call vundle#begin()
     " -------------
     Plugin 'cohlin/vim-colorschemes'
     Plugin 'zcodes/vim-colors-basic'
-"   Plugin 'vim-scripts/CycleColor'
 
 call vundle#end()
 filetype plugin on
@@ -55,20 +50,14 @@ filetype plugin on
 "=======================================
 
 " CtrlP
-let g:ctrlp_map = '<leader>p'
+"let g:ctrlp_map = '<leader>p'
 
 " NERDTree
-let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_open_on_console_startup = 1
+"let g:nerdtree_tabs_open_on_gui_startup = 1
+"let g:nerdtree_tabs_open_on_console_startup = 1
 
-" vim-indent-guides  (<leader>ig)
+" vim-indent-guides  (<leader>i)
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 

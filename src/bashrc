@@ -61,10 +61,6 @@ alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
 
-function lh {
-    env ls -a1F | perl -e 'foreach (sort <>) { print if /^\./ && !/^\.\.?\/$/ }'
-}
-
 alias bk='cd "$OLDPWD"'
 
 function here {
@@ -76,16 +72,10 @@ function there {
     cd $(cat "$HOME/.SAVED_PWD")
 }
 
-function ccd {
-    cd $(dirname "$1")
-}
-
-alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 
 alias dus='du -s * . | sort -n'
 
@@ -94,9 +84,6 @@ function findi {
 }
 
 alias fl='find .| sort | less'
-
-#alias gi='grep -i'
-#alias giv='grep -iv'
 
 function grepi {
     local cmd="grep -nri $1 ."
@@ -122,7 +109,6 @@ function grepi {
 
 # Editors
 
-alias nano='nano -u'
 alias vimm='vim -u NONE'
 
 # Git
@@ -136,7 +122,6 @@ alias gs="git status"
 
 # Places
 
-alias si="cd $HOME/Sites"
 alias wo="cd $HOME/Workspace"
 
 #=============================================================================
