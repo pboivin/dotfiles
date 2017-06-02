@@ -19,3 +19,6 @@
 [push]
 	default = simple
 
+[alias]
+	graph = "log --color --graph --decorate --oneline --branches --remotes --tags"
+
