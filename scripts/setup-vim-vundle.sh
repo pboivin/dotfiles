@@ -23,3 +23,4 @@ git clone https://github.com/gmarik/Vundle.vim.git Vundle.vim
 
 # run vim and install plugins
 vim -c "PluginUpdate"
+
