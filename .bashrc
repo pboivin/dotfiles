@@ -67,6 +67,15 @@ function lh {
 
 alias bk='cd "$OLDPWD"'
 
+function here {
+    pwd > "$HOME/.SAVED_PWD"
+}
+
+function there {
+    touch "$HOME/.SAVED_PWD"
+    cd $(cat "$HOME/.SAVED_PWD")
+}
+
 function ccd {
     cd $(dirname "$1")
 }
