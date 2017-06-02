@@ -5,6 +5,9 @@
 "   http://vim.wikia.com/wiki/Example_vimrc
 "   https://github.com/gmarik/Vundle.vim
 
+" Map leader
+let mapleader=","
+
 "==============================================================================
 " Plugins
 "==============================================================================
@@ -169,9 +172,6 @@ noremap  <S-Left>  0
 inoremap <S-Left>  <Esc>0i
 noremap  <S-Right> $
 inoremap <S-Right> <Esc>A
-
-" Map leader
-let mapleader=","
 
 " Faster movements up and down
 noremap  <S-Down> 3j
