@@ -290,7 +290,7 @@ command! -nargs=1 SetHardTabs call SetHardTabsFn("<args>")
 " File extensions
 "==============================================================================
 
-au BufRead,BufNewFile *.vue setfiletype html
+au BufRead,BufNewFile *.vue set filetype=html
 
 "==============================================================================
 " File formats

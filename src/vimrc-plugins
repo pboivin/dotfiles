@@ -29,6 +29,10 @@ call vundle#begin()
     Plugin 'phpcomplete.vim'
     Plugin 'loremipsum'
 
+    " build tools
+    " ---------
+    Plugin 'neomake/neomake'
+
     " filetypes
     " ---------
     Plugin 'tpope/vim-markdown'
@@ -36,6 +40,7 @@ call vundle#begin()
     Plugin 'groenewege/vim-less'
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'jwalton512/vim-blade'
+    Plugin 'vim-scripts/django.vim'
 
     " color schemes
     " -------------
@@ -61,4 +66,8 @@ nnoremap <leader>t :NERDTreeToggle<cr>
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
+
+" filetypes
+au BufRead,BufNewFile *.html set filetype=htmldjango
+au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
