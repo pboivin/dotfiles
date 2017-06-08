@@ -363,13 +363,19 @@ command! FindDebugComments /\(debug\|todo\|fixme\)
 command! FindPhpTags /<*?>*
 
 "==============================================================================
-" Local config
+" Extra config. files
 "==============================================================================
 
+" Load ~/.vimrc_local if it exists
 if !empty(glob("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
 
-" Read extra .vimrc from current directory
+" Load .vimproject if it exists
+if filereadable(".vimproject")
+    source .vimproject
+endif
+
+" Load .vimrc if it exists
 set exrc
 
