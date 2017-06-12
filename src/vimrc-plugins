@@ -57,6 +57,7 @@ filetype plugin on
 
 " CtrlP
 "let g:ctrlp_map = '<leader>p'
+let g:ctrlp_custom_ignore = 'node_modules\|.DS_Store\|.git'
 
 " NERDTree
 let g:nerdtree_tabs_open_on_gui_startup = 1
