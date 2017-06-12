@@ -22,6 +22,7 @@ call vundle#begin()
     " ---------------
 "   Plugin 'vim-scripts/Align'
 "   Plugin 'tpope/vim-surround'
+    Plugin 'jiangmiao/auto-pairs'
 
     " snippets and code completion
     " ----------------------------
