@@ -13,12 +13,13 @@
 
 [core]
         editor = vim
+	excludesfile = ~/.gitignore_global
 
 [color]
         ui = auto
 
 [push]
-	default = simple
+	default = current
 
 [alias]
 	graph = "log --color --graph --decorate --oneline --branches --remotes --tags"
