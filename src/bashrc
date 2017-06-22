@@ -118,7 +118,9 @@ alias gdh="git diff HEAD"
 alias gp="git log -p"
 alias gl="git log"
 alias gll="git log --name-status"
+alias gl1="git log --oneline"
 alias gs="git status"
+alias gb="git branch"
 
 # Places
 
