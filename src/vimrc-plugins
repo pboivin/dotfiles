@@ -29,6 +29,10 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'phpcomplete.vim'
     Plugin 'loremipsum'
+    Plugin 'davidhalter/jedi-vim'
+
+    Plugin 'honza/vim-snippets'
+    Plugin 'SirVer/ultisnips'
 
     " build tools
     " ---------
@@ -77,4 +81,9 @@ au BufRead,BufNewFile *.j2 set filetype=htmldjango
 " Color scheme
 let &colorcolumn=join(range(79,999),",")
 color basic-dark
+
+" JEDI
+" do not immediately open suggestion
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
 
