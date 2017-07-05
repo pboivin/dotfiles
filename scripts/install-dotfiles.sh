@@ -69,7 +69,7 @@ done
 #
 
 for file in $CONFIG_LOCAL; do
-    touch "$CONFIG_DEST/$file"
+    touch "$CONFIG_DEST/.$file"
 done
 
 #
