@@ -17,6 +17,7 @@ call vundle#begin()
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'kien/ctrlp.vim'
     Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'rking/ag.vim'
 
     " text formatting
     " ---------------
