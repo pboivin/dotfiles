@@ -68,7 +68,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git'
 " NERDTree
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
-nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeTabsToggle<cr>
 
 " vim-indent-guides  (<leader>i)
 let g:indent_guides_auto_colors = 0
