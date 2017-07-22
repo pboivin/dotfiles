@@ -81,10 +81,6 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
-" Use visual bell instead of sound
-"   (Disabled, it's kind of annoying in gvim...)
-"#  set visualbell
-
 " Reset the terminal code for the visual bell.
 set t_vb=
 
@@ -201,15 +197,11 @@ noremap <C-Left>  b
 noremap <C-Right> w
 
 " Buffer switching
-noremap [  :bp<CR>
-noremap ]  :bn<CR>
 noremap bp :bp<CR>
 noremap bn :bn<CR>
 noremap bl :ls<CR>
 
 " Tab switching
-noremap  {  :tabprev<CR>
-noremap  }  :tabnext<CR>
 nnoremap tp :tabprev<CR>
 nnoremap tn :tabnext<CR>
 nnoremap tt :tabnew<CR>
@@ -226,12 +218,8 @@ set guifont=Monospace\ 9
 " Font select shortcut
 command! Font :set guifont=*
 
-" X11 copy and paste
+" Yank to system clipboard
 noremap <C-k> "+y
-noremap <C-p> "+P
-
-" Save with Ctrl+S
-noremap <C-s> :w<CR>
 
 "==============================================================================
 " Spell check
@@ -244,12 +232,6 @@ command! SpellOff :setlocal nospell
 "==============================================================================
 " Custom actions
 "==============================================================================
-
-" Lazy aliases
-command! W    :w
-command! Q    :qa
-command! WQ   :wq
-command! SO   :source %
 
 " Whitespace
 command! TabsToSpaces      :%s/\t/    /g
@@ -327,37 +309,13 @@ command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
 " Comment : Insert // prefix
 command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
 
-" Format HTML
-function! FormatHtmlFn()
+" Set filetype for auto formatting (=)
+function! SetFormatFn(filetype)
     filetype indent on
-    set filetype=html
+    execute "set filetype=" . a:filetype
     set smartindent
 endfunction
-command! FormatHtml call FormatHtmlFn()
-
-" Format CSS
-function! FormatCssFn()
-    filetype indent on
-    set filetype=css
-    set smartindent
-endfunction
-command! FormatCss call FormatCssFn()
-
-" Format JS
-function! FormatJsFn()
-    filetype indent on
-    set filetype=javascript
-    set smartindent
-endfunction
-command! FormatJs call FormatJsFn()
-
-" Format PHP
-function! FormatPhpFn()
-    filetype indent on
-    set filetype=php
-    set smartindent
-endfunction
-command! FormatPhp call FormatPhpFn()
+command! -nargs=1 SetFormat call SetFormatFn("<args>")
 
 "==============================================================================
 " Code search
