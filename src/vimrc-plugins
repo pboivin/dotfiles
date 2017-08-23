@@ -18,6 +18,7 @@ call vundle#begin()
     Plugin 'kien/ctrlp.vim'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'rking/ag.vim'
+"   Plugin 'weynhamz/vim-plugin-minibufexpl'
 
     " text formatting
     " ---------------

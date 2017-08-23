@@ -317,6 +317,9 @@ function! SetFormatFn(filetype)
 endfunction
 command! -nargs=1 SetFormat call SetFormatFn("<args>")
 
+" Format JSON buffer
+command! FormatJSON :%!python -mjson.tool
+
 "==============================================================================
 " Code search
 "==============================================================================
