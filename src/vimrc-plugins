@@ -20,6 +20,10 @@ call vundle#begin()
     Plugin 'rking/ag.vim'
 "   Plugin 'weynhamz/vim-plugin-minibufexpl'
 
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'tpope/vim-fugitive'
+
     " text formatting
     " ---------------
 "   Plugin 'vim-scripts/Align'
