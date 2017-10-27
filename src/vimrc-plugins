@@ -78,7 +78,8 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 nnoremap <leader>t :NERDTreeTabsToggle<cr>
 
 " git-gutter
-nnoremap <leader>n :GitGutterNextHunk<cr>
+nnoremap <leader>hn :GitGutterNextHunk<cr>zz
+nnoremap <leader>hs :GitGutterStageHunk<cr>
 
 " vim-indent-guides  (<leader>i)
 let g:indent_guides_auto_colors = 0
