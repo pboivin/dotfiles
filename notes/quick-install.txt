@@ -1,3 +1,5 @@
+# Quickly install bash and vim config on top of current configuration
+
 wget https://raw.githubusercontent.com/pboi20/dotfiles/master/src/vimrc -O $HOME/.vimrc
 wget https://raw.githubusercontent.com/pboi20/dotfiles/master/src/bashrc -O $HOME/.bashrc_pboivin
 

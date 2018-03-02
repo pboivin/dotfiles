@@ -15,25 +15,20 @@ cd dotfiles
 ```
 
 
-#### 2. Run the install script
+#### 2. Run the install scripts
 
 ```
-bash scripts/install-dotfiles.sh
+bash install.sh
 ```
 
-This will create a symlink in your $HOME directory for each configuration file. The script will leave a backup of any file that's already there. Alternatively, you could manually copy only the files you want.
+This will create a symlink in your `$HOME` directory for each configuration file. The script will leave a backup of any file that's already there. Alternatively, you could manually copy only the files you want.
 
-
-#### 3. Run the setup scripts
 
 ```
-scripts/setup-vim-vundle.sh
-    - Setup Vim and plugins, using Vundle as plugin manager
-
-
-scripts/setup-homebrew-cask.sh
-    - Install Homebrew as package manager, including Cask for common apps
+bash setup-vim.sh
 ```
+
+This will setup your `$HOME/.vim` directory and install Vundle as a plugin manager.
 
 
 Disclaimer
