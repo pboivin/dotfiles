@@ -1,0 +1,10 @@
+# Prerequisite: python3 pip3
+
+# Install with:
+pip3 install virtualenvwrapper
+mkdir -p $HOME/Workspace/virtualenvs
+
+# Add to .bashrc_local:
+export WORKON_HOME=$HOME/Workspace/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source $HOME/.local/bin/virtualenvwrapper.sh
