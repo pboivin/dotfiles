@@ -72,19 +72,20 @@ for file in $CONFIG_LOCAL; do
 done
 
 #
-# Platform-specific stuff
+# All platforms
 #
 
-if [ "$(uname)" == "Linux" ]
-then
-    bashrc_system="$CONFIG_DEST/.bashrc"
-    bashrc_main="$CONFIG_DEST/.bashrc-main"
+bashrc_system="$CONFIG_DEST/.bashrc"
+bashrc_main="$CONFIG_DEST/.bashrc-main"
 
-    touch "$bashrc_system"
-    echo "
+touch "$bashrc_system"
+echo "
 . $bashrc_main
 " >> "$bashrc_system"
-fi
+
+#
+# macOS
+#
 
 if [ "$(uname)" == "Darwin" ]
 then
@@ -92,7 +93,7 @@ then
     profile_file="$CONFIG_DEST/.profile"
 
     backup_file "$profile_file"
-    ln -s "$bashrc_file" "$profile_file"
+    cp "$bashrc_file" "$profile_file"
 fi
 
 say "DONE!"
