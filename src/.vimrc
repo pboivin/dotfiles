@@ -121,6 +121,9 @@ command! NoPaste :set nopaste
 "# let &colorcolumn=join(range(79,999),",")
 "# highlight ColorColumn ctermbg=233 guibg=#2c2d27
 
+" Include hyphenated keywords in autocomplete suggestions
+set iskeyword+=\-
+
 "==============================================================================
 " Search
 "==============================================================================
@@ -237,6 +240,8 @@ command! SpellOff :setlocal nospell
 command! TabsToSpaces      :%s/\t/    /g
 command! TrimLineEndings   :%s/\(\w*\) \+$/\1/g
 command! TrimEmptyLines    :g/^\s*$/d
+
+command! -range SingleToDoubleQuotes   :%s/'/"/g
 
 " AVE on = Autoindent + Virtual Edit
 function! AveOnFn()

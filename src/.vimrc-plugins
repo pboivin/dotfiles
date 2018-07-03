@@ -29,7 +29,7 @@ call vundle#begin()
     " text formatting
     " ---------------
 "   Plugin 'vim-scripts/Align'
-"   Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-surround'
 "   Plugin 'jiangmiao/auto-pairs'
 
     " snippets and code completion
@@ -39,8 +39,13 @@ call vundle#begin()
     Plugin 'loremipsum'
     Plugin 'davidhalter/jedi-vim'
 
+    " (Buggy)
+"   Plugin 'SirVer/ultisnips'
+
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'garbas/vim-snipmate'
     Plugin 'honza/vim-snippets'
-    Plugin 'SirVer/ultisnips'
 
     " build tools
     " ---------
@@ -84,7 +89,7 @@ nnoremap <leader>hs :GitGutterStageHunk<cr>
 " vim-indent-guides  (<leader>i)
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=1
 
 " File types
 au BufRead,BufNewFile *.html set filetype=htmldjango
@@ -99,3 +104,5 @@ color basic-dark
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
 
+" Snippets
+let g:UltiSnipsUsePythonVersion = 2
