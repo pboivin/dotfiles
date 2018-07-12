@@ -117,10 +117,6 @@ set linebreak
 command! Paste :set paste
 command! NoPaste :set nopaste
 
-" Highlight past 79 chars
-"# let &colorcolumn=join(range(79,999),",")
-"# highlight ColorColumn ctermbg=233 guibg=#2c2d27
-
 " Include hyphenated keywords in autocomplete suggestions
 set iskeyword+=\-
 

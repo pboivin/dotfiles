@@ -88,8 +88,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=1
 au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
+" Highlight past 80 chars
+let &colorcolumn=join(range(80,999),",")
+
 " Color scheme
-let &colorcolumn=join(range(79,999),",")
 color basic-dark
 
 " JEDI
