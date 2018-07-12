@@ -18,19 +18,12 @@ call vundle#begin()
     Plugin 'kien/ctrlp.vim'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'rking/ag.vim'
-"   Plugin 'weynhamz/vim-plugin-minibufexpl'
     Plugin 'henrik/vim-indexed-search'
 
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
-
-    " text formatting
-    " ---------------
-"   Plugin 'vim-scripts/Align'
-    Plugin 'tpope/vim-surround'
-"   Plugin 'jiangmiao/auto-pairs'
 
     " snippets and code completion
     " ----------------------------
