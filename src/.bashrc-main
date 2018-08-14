@@ -111,6 +111,11 @@ function grepi {
 
 alias vimm='vim -u NONE'
 
+# Edit files
+
+alias vimrc="vim -p ~/.vimrc*"
+alias bashrc="vim -p ~/.bashrc*"
+
 # Git
 
 alias gd="git diff"
