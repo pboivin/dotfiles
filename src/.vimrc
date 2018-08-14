@@ -178,6 +178,11 @@ inoremap <S-Down> <Esc>3ja
 noremap  <S-Up>   3k
 inoremap <S-Up>   <Esc>3ka
 
+noremap  <C-d>    3j
+inoremap <C-d>    <Esc>3ja
+noremap  <C-u>    3k
+inoremap <C-u>    <Esc>3ka
+
 " Faster movements up and down with scrolling
 noremap  <C-Down> 9jzz
 inoremap <C-Down> <Esc>9jzza
