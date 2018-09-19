@@ -5,22 +5,21 @@
 #   https://github.com/mzabriskie/dotfiles
 
 [user]
-	email = pboivin@gmail.com
-	name = Patrick Boivin
+    email = pboivin@gmail.com
+    name = Patrick Boivin
 
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 
 [core]
-        editor = vim
-	excludesfile = ~/.gitignore_global
+    editor = vim
+    excludesfile = ~/.gitignore_global
 
 [color]
-        ui = auto
+    ui = auto
 
 [push]
-	default = current
+    default = current
 
 [alias]
-	graph = "log --color --graph --decorate --oneline --branches --remotes --tags"
-
+    graph = "log --color --graph --decorate --oneline --branches --remotes --tags"
