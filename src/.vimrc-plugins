@@ -54,6 +54,7 @@ call vundle#begin()
     Plugin 'cohlin/vim-colorschemes'
     Plugin 'zcodes/vim-colors-basic'
     Plugin 'lu-ren/SerialExperimentsLain'
+    Plugin 'mhartington/oceanic-next'
 
 call vundle#end()
 filetype plugin on
@@ -93,7 +94,16 @@ au BufRead,BufNewFile *.j2 set filetype=htmldjango
 let &colorcolumn=join(range(80,999),",")
 
 " Color scheme
-color basic-dark
+" ------------
+"color basic-dark
+
+syntax enable
+set t_Co=256
+if (has("termguicolors"))
+set termguicolors
+endif
+let &colorcolumn=join(range(79,999),",")
+colorscheme OceanicNext
 
 " JEDI
 " ----
