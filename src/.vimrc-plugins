@@ -28,21 +28,17 @@ call vundle#begin()
     " snippets and code completion
     " ----------------------------
     Plugin 'mattn/emmet-vim'
-    Plugin 'phpcomplete.vim'
+"   Plugin 'phpcomplete.vim'
     Plugin 'loremipsum'
-    Plugin 'davidhalter/jedi-vim'
-
-    " (Buggy)
-"   Plugin 'SirVer/ultisnips'
-
+"   Plugin 'davidhalter/jedi-vim'
     Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'tomtom/tlib_vim'
     Plugin 'garbas/vim-snipmate'
     Plugin 'honza/vim-snippets'
 
     " build tools
-    " ---------
-    Plugin 'neomake/neomake'
+    " -----------
+"    Plugin 'neomake/neomake'
 
     " filetypes
     " ---------
@@ -67,24 +63,29 @@ filetype plugin on
 "=======================================
 
 " CtrlP
+" -----
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git'
 
 " NERDTree
+" --------
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
 nnoremap <leader>t :NERDTreeTabsToggle<cr>
 
 " git-gutter
+" ----------
 nnoremap <leader>hn :GitGutterNextHunk<cr>zz
 nnoremap <leader>hs :GitGutterStageHunk<cr>
 
 " vim-indent-guides  (<leader>i)
+" -----------------
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=1
 
 " File types
+" ----------
 au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
@@ -95,9 +96,10 @@ let &colorcolumn=join(range(80,999),",")
 color basic-dark
 
 " JEDI
+" ----
 " do not immediately open suggestion
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_call_signatures = 0
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#show_call_signatures = 0
 
 " Snippets
-let g:UltiSnipsUsePythonVersion = 2
+"let g:UltiSnipsUsePythonVersion = 2

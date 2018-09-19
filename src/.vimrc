@@ -289,7 +289,7 @@ function! FoldManualFn()
     set foldmethod=manual
     execute "normal zR"
 endfunction
-command! FO call FoldManualFn()
+command! FM call FoldManualFn()
 
 "==============================================================================
 " File types
@@ -322,12 +322,6 @@ command! UnixToDos call UnixToDosFn()
 " Code format
 "==============================================================================
 
-" Comment : Insert # prefix
-command! -range CommentShell :<line1>,<line2>s/^/# /g | nohl
-
-" Comment : Insert // prefix
-command! -range CommentJS :<line1>,<line2>s/^/\/\/ /g | nohl
-
 " Set filetype for auto formatting (=)
 function! SetFormatFn(filetype)
     filetype indent on
@@ -338,13 +332,6 @@ command! -nargs=1 SetFormat call SetFormatFn("<args>")
 
 " Format JSON buffer
 command! FormatJSON :%!python -mjson.tool
-
-"==============================================================================
-" Code search
-"==============================================================================
-
-command! FindDebugComments /\(debug\|todo\|fixme\)
-command! FindPhpTags /<*?>*
 
 "==============================================================================
 " Extra config. files
