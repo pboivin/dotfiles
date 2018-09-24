@@ -30,8 +30,14 @@ COLOR_BLUE="34"
 COLOR_WHITE="37"
 COLOR_GREY="90"
 
-PS1_NAME=$(hostname)
-PS1=''$(color_normal $COLOR_YELLOW)'($(date +%H:%M:%S)) \u@'$PS1_NAME' : '$(color_bold $COLOR_WHITE)'\w'$(color_clear)'\n$ '
+PROMPT_DATE='($(date +%H:%M:%S))'
+PROMPT_USER='\u@'"$(hostname)"
+PROMPT_LOCATION='\w'
+PROMPT_SYMBOL='\n$ '
+PS1="$(color_normal $COLOR_YELLOW)$PROMPT_DATE $PROMPT_USER : $(color_bold $COLOR_WHITE)$PROMPT_LOCATION $(color_clear)$PROMPT_SYMBOL"
+# Result:
+#    (12:34:56) pboivin@embee : ~/Workspace
+#    $ ...
 
 #=============================================================================
 # Aliases
