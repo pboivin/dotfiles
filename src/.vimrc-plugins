@@ -48,6 +48,8 @@ call vundle#begin()
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'jwalton512/vim-blade'
     Plugin 'vim-scripts/django.vim'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'mxw/vim-jsx'
 
     " color schemes
     " -------------
