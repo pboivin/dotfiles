@@ -225,6 +225,15 @@ command! Font :set guifont=*
 " Yank to system clipboard
 noremap <C-k> "+y
 
+" Paste from system clipboard with extra effort
+function! PasteFromSystemFn()
+    set paste
+    execute 'normal "+P'
+    set nopaste
+endfunction
+command! PasteFromSystem call PasteFromSystemFn()
+noremap <C-p> :PasteFromSystem<CR>
+
 "==============================================================================
 " Spell check
 "==============================================================================
