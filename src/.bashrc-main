@@ -113,6 +113,15 @@ function grepi {
     eval "$cmd"
 }
 
+function cdd() {
+    if [ $# -lt 1 ]; then
+        echo "Error: need one argument"
+    else
+        local destination=$(dirname "$1")
+        cd "$destination"
+    fi
+}
+
 # Editors
 
 alias vimm='vim -u NONE'
