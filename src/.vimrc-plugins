@@ -50,6 +50,7 @@ call vundle#begin()
     Plugin 'vim-scripts/django.vim'
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
+    Plugin 'lumiliet/vim-twig'
 
     " color schemes
     " -------------
