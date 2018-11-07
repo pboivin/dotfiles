@@ -6,5 +6,5 @@ mkdir -p $HOME/Workspace/virtualenvs
 
 # Add to .bashrc_local:
 export WORKON_HOME=$HOME/Workspace/virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source $HOME/.local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+source $(which virtualenvwrapper.sh)
