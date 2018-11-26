@@ -80,7 +80,8 @@ bashrc_main="$CONFIG_DEST/.bashrc-main"
 
 touch "$bashrc_system"
 echo "
-. $bashrc_main
+. \"$bashrc_main\"
+
 " >> "$bashrc_system"
 
 #
