@@ -19,7 +19,6 @@ call vundle#begin()
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'rking/ag.vim'
     Plugin 'henrik/vim-indexed-search'
-
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'vim-airline/vim-airline'
@@ -55,9 +54,9 @@ call vundle#begin()
 
     " color schemes
     " -------------
-    Plugin 'cohlin/vim-colorschemes'
-    Plugin 'zcodes/vim-colors-basic'
-    Plugin 'lu-ren/SerialExperimentsLain'
+"   Plugin 'cohlin/vim-colorschemes'
+"   Plugin 'zcodes/vim-colors-basic'
+"   Plugin 'lu-ren/SerialExperimentsLain'
     Plugin 'mhartington/oceanic-next'
 
 call vundle#end()
