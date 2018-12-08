@@ -24,6 +24,7 @@ call vundle#begin()
     Plugin 'airblade/vim-gitgutter'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'editorconfig/editorconfig-vim'
 
     " snippets and code completion
     " ----------------------------
