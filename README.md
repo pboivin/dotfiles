@@ -11,18 +11,24 @@ Installation
 
 ```
 git clone https://github.com/pboi20/dotfiles.git
-cd dotfiles
+cd dotfiles/src
 ```
 
+#### 2. Manually copy the files to your home directory
 
-#### 2. Run the install scripts
+```
+cp .bashrc-main "$HOME/.bashrc"
+cp .vimrc "$HOME/.vimrc"
+cp .vimrc-plugins "$HOME/.vimrc-plugins"
+```
+
+#### 3. Alternatively, run the install scripts
 
 ```
 bash install.sh
 ```
 
-This will create a symlink in your `$HOME` directory for each configuration file. The script will leave a backup of any file that's already there. Alternatively, you could manually copy only the files you want.
-
+This will create a symlink in your `$HOME` directory for each configuration file. The script will leave a backup of any file that's already there.
 
 ```
 bash setup-vim.sh
