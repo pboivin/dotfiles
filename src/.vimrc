@@ -300,6 +300,12 @@ function! FoldManualFn()
 endfunction
 command! FM call FoldManualFn()
 
+" Toggle Wrap
+function! ToggleWrapFn()
+    set wrap!
+endfunction
+command! WR call ToggleWrapFn()
+
 "==============================================================================
 " File types
 "==============================================================================
