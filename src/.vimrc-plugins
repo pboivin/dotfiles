@@ -104,7 +104,7 @@ let &colorcolumn=join(range(80,999),",")
 syntax enable
 set t_Co=256
 if (has("termguicolors"))
-set termguicolors
+    set termguicolors
 endif
 let &colorcolumn=join(range(79,999),",")
 colorscheme OceanicNext
