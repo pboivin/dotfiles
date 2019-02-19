@@ -89,6 +89,10 @@ function findi {
     find . -iname "*$1*"
 }
 
+function findiv {
+    find . -iname "*$1*" | vim -
+}
+
 alias fl='find .| sort | less'
 
 function grepi {
