@@ -183,6 +183,11 @@ inoremap <C-d>    <Esc>3ja
 noremap  <C-u>    3k
 inoremap <C-u>    <Esc>3ka
 
+noremap  <C-j>    3j
+inoremap <C-j>    <Esc>3ja
+noremap  <C-k>    3k
+inoremap <C-k>    <Esc>3ka
+
 " Faster movements up and down with scrolling
 noremap  <C-Down> 9jzz
 inoremap <C-Down> <Esc>9jzza
@@ -223,7 +228,7 @@ set guifont=Monospace\ 9
 command! Font :set guifont=*
 
 " Yank to system clipboard
-noremap <C-k> "+y
+noremap <C-y> "+y
 
 " Paste from system clipboard with extra effort
 function! PasteFromSystemFn()
@@ -265,7 +270,7 @@ function! AveOffFn()
     set noautoindent
     set virtualedit=
 endfunction
-command! NoAVE call AveOffFn()
+command! NOAVE call AveOffFn()
 
 " Switch to soft tabs
 function! SetSoftTabsFn(width)
