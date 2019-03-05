@@ -311,6 +311,30 @@ function! ToggleWrapFn()
 endfunction
 command! WR call ToggleWrapFn()
 
+" AG - Search content
+function! AgFn(text)
+    execute "Ag " . a:text
+endfunction
+command! -nargs=1 AG call AgFn("<args>")
+
+" AF - Search file names
+function! AgFileFn(text)
+    execute "AgFile " . a:text
+endfunction
+command! -nargs=1 AF call AgFileFn("<args>")
+
+" NF
+function! NerdTreeCurrentFileFn()
+    execute "NERDTreeTabsFind "
+endfunction
+command! NF call NerdTreeCurrentFileFn()
+
+" OH
+function! OpenHereFn()
+    execute "!open '%:p:h' "
+endfunction
+command! OH call OpenHereFn()
+
 "==============================================================================
 " File types
 "==============================================================================
