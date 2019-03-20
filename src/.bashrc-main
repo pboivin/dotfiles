@@ -49,7 +49,7 @@ if [ "$(uname)" == "Linux" ]
 then
     alias ls='env ls -FC --color=auto --group-directories-first'
     alias l1='env ls -1Fv --color=auto'
-    alias go='gnome-open'
+    alias files='gnome-open'
 fi
 
 if [ "$(uname)" == "Darwin" ]
@@ -58,6 +58,7 @@ then
     alias l1='env ls -1FG'
     alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
     alias tedit='open -a textedit'
+    alias files='open -a finder .'
 fi
 
 # Shell
