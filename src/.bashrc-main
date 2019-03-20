@@ -70,6 +70,17 @@ alias l2='ls *'
 
 alias bk='cd "$OLDPWD"'
 
+function mcd {
+    if [ -z "$1" ]
+    then
+        echo "Error: need one argument"
+        return
+    fi
+
+    mkdir "$1"
+    cd "$1"
+}
+
 function here {
     pwd > "$HOME/.SAVED_PWD"
 }
