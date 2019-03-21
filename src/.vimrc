@@ -159,15 +159,15 @@ vnoremap // y/<c-r>"<cr>
 
 " Grep files in cwd, recursive
 function! GrepFn(search)
-    execute 'vimgrep ' . a:search . ' **/*'
-    execute 'cwindow'
+    execute "vimgrep " . a:search . " **/*"
+    execute "cwindow"
 endfunction
 command! -nargs=1 Grep call GrepFn("<args>")
 
 " Grep help files
 function! GrepHelpFn(search)
-    execute 'helpgrep ' . a:search
-    execute 'cwindow'
+    execute "helpgrep " . a:search
+    execute "cwindow"
 endfunction
 command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 
@@ -284,8 +284,9 @@ command! -nargs=1 SetHardTabs call SetHardTabsFn("<args>")
 " Quoting
 "------------
 
-" FIXME: Work on selected lines (if any)
-command! -range SingleToDoubleQuotes %s/'/"/g
+command! -range SingleToDoubleQuotes '<,'>s/'/"/g
+
+command! -range DoubleToSingleQuotes '<,'>s/"/'/g
 
 "---------------------------
 " Autoindent + Virtual Edit
