@@ -105,6 +105,10 @@ function findiv {
     find . -iname "*$1*" | vim -
 }
 
+function findir {
+    find . -iname "$1*" -type d
+}
+
 alias fl='find .| sort | less'
 
 function grepi {
