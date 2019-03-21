@@ -253,8 +253,18 @@ command! SpellOff setlocal nospell
 " Whitespace
 "------------
 
-" FIXME: Use soft tab setting
-command! TabsToSpaces %s/\t/    /g
+function! TabsToSpacesFn()
+    let l:count = 0
+    let l:softtab = ""
+    while l:count < &softtabstop
+      let l:softtab .= " "
+      let l:count += 1
+    endwhile
+    execute "%s/\t/" . l:softtab . "/g"
+endfunction
+command! TabsToSpaces call TabsToSpacesFn()
+
+command! TabsFind /\t/
 
 command! TrimLineEndings %s/\(\w*\) \+$/\1/g
 
