@@ -410,9 +410,19 @@ command! -nargs=* AF AgFile <args>
 " NF - Highlight current file in Nerd Tree
 command! NF NERDTreeTabsFind
 
-"----------
-" Fugitive
-"----------
+"----------------
+" Git / Fugitive
+"----------------
+
+" GP - Get the output of 'git log -p' for current file. Opens in new tab.
+function! GitLogPatchFn()
+  let l:cmd = "r!git log -p '" . expand("%") . "'"
+  tabnew
+  execute l:cmd
+  SetFormat diff
+  normal gg
+endfunction
+command! GP call GitLogPatchFn()
 
 " GL - Alias for Glog. Opens quicklist.
 command! GL Glog | :copen
