@@ -118,8 +118,11 @@ vmap > >gv
 vmap < <gv
 
 "==============================================================================
-" System Clipboard
+" Copy/Paste
 "==============================================================================
+
+" Select everything
+noremap <leader>a ggVG
 
 " Yank to system clipboard
 noremap <leader>y "+y
