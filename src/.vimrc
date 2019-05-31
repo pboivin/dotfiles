@@ -260,8 +260,8 @@ function! TabsToSpacesFn()
     let l:count = 0
     let l:softtab = ""
     while l:count < &softtabstop
-      let l:softtab .= " "
-      let l:count += 1
+        let l:softtab .= " "
+        let l:count += 1
     endwhile
     execute "%s/\t/" . l:softtab . "/g"
 endfunction
@@ -419,11 +419,11 @@ command! NF NERDTreeTabsFind
 
 " GP - Get the output of 'git log -p' for current file. Opens in new tab.
 function! GitLogPatchFn()
-  let l:cmd = "r!git log -p '" . expand("%") . "'"
-  tabnew
-  execute l:cmd
-  SetFormat diff
-  normal gg
+    let l:cmd = "r!git log -p '" . expand("%") . "'"
+    tabnew
+    execute l:cmd
+    SetFormat diff
+    normal gg
 endfunction
 command! GP call GitLogPatchFn()
 
@@ -448,5 +448,5 @@ if !empty(glob("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
 
-" Load .vimrc if it exists
+" Load project .vimrc if it exists
 set exrc
