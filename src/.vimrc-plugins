@@ -64,11 +64,9 @@ call vundle#begin()
 call vundle#end()
 filetype plugin on
 
-
 "=======================================
 " Configuration
 "=======================================
-
 
 " CtrlP
 " -----
@@ -76,25 +74,21 @@ filetype plugin on
 let g:ctrlp_custom_ignore = 'vendor|node_modules\|\.DS_Store\|\.git'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-
 " NERDTree
 " --------
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
 nnoremap <leader>t :NERDTreeTabsToggle<cr>
 
-
 " git-gutter
 " ----------
 nnoremap <leader>hn :GitGutterNextHunk<cr>zz
 nnoremap <leader>hs :GitGutterStageHunk<cr>
 
-
 " File types
 " ----------
 au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.j2 set filetype=htmldjango
-
 
 " JEDI
 " ----
@@ -104,7 +98,6 @@ au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
 " Snippets
 "let g:UltiSnipsUsePythonVersion = 2
-
 
 " Color scheme
 " ------------
@@ -120,11 +113,9 @@ colorscheme OceanicNext
 " Highlight past 80 chars
 let &colorcolumn=join(range(80,999),",")
 
-
 " vim-indent-guides  (<leader>ig)
 " -----------------
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235 guibg=#1b2b34
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 guibg=#1f2f3f
-
