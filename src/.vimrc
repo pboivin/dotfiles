@@ -230,6 +230,12 @@ nnoremap tc :tabclose<CR>
 nnoremap te :tabnew<CR>:e .<CR>
 nnoremap t0 :tabmove 0<CR>
 
+" Next Window (Fast)
+noremap  <S-W> <C-W><C-W>
+
+" Next Tab (Fast)
+nnoremap <S-T> :tabnext<CR>
+
 "==============================================================================
 " GUI
 "==============================================================================
@@ -402,6 +408,9 @@ command! QQ qa!
 
 " AG - Search content
 command! -nargs=* AG Ag <args>
+
+" AS - Search content using last search expression
+command! AS AgFromSearch
 
 " AF - Search file names
 command! -nargs=* AF AgFile <args>
