@@ -53,6 +53,7 @@ call vundle#begin()
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
     Plugin 'lumiliet/vim-twig'
+    Plugin 'digitaltoad/vim-pug'
 
     " color schemes
     " -------------
