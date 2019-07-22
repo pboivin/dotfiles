@@ -4,7 +4,7 @@
 CONFIG_LINK="true"    # otherwise files will be copied
 CONFIG_SRC="$PWD/src"
 CONFIG_DEST="$HOME"
-CONFIG_DOTFILES=".bashrc-main .vimrc .vimrc-plugins .gitconfig .tmux.conf"
+CONFIG_DOTFILES=".bash-helpers .bashrc-main .vimrc .vimrc-plugins .gitconfig .tmux.conf"
 CONFIG_LOCAL=".bashrc_local .vimrc_local"
 
 
