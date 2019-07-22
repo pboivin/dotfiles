@@ -1,6 +1,3 @@
-# A basic Bash configuration file
-# Assembled by Patrick Boivin from various sources
-
 #=============================================================================
 # Path
 #=============================================================================
@@ -68,9 +65,21 @@ alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
 
-alias bk='cd "$OLDPWD"'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
-function mcd {
+function cdd() {
+    if [ $# -lt 1 ]; then
+        echo "Error: need one argument"
+    else
+        local destination=$(dirname "$1")
+        cd "$destination"
+    fi
+}
+
+function mkd {
     if [ -z "$1" ]
     then
         echo "Error: need one argument"
@@ -81,65 +90,16 @@ function mcd {
     cd "$1"
 }
 
-function here {
-    pwd > "$HOME/.SAVED_PWD"
-}
-
-function there {
-    touch "$HOME/.SAVED_PWD"
-    cd $(cat "$HOME/.SAVED_PWD")
-}
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-alias dus='du -s * . | sort -n'
-
 function findi {
-    find . -iname "*$1*"
+    find . -iname "$1"
 }
 
 function findiv {
-    find . -iname "*$1*" | vim -
+    find . -iname "$1" | vim -
 }
 
 function findir {
-    find . -iname "$1*" -type d
-}
-
-alias fl='find .| sort | less'
-
-function grepi {
-    local cmd="grep -nri $1 ."
-    local i
-
-    if [ $# -lt 1 ]
-    then
-        echo "Error: need at least one argument"
-        return
-    fi
-
-    # build grep chain with function arguments
-    i=2
-    while [ $i -le $# ]
-    do
-        eval 'cmd="$cmd | grep -i $'$i'"'
-        let i+=1
-    done
-
-    # run grep chain
-    eval "$cmd"
-}
-
-function cdd() {
-    if [ $# -lt 1 ]; then
-        echo "Error: need one argument"
-    else
-        local destination=$(dirname "$1")
-        cd "$destination"
-    fi
+    find . -iname "$1" -type d
 }
 
 # Editors

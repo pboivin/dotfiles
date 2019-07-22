@@ -1,16 +1,9 @@
-" A basic VIM configuration file
-" Assembled by Patrick Boivin from various sources
-"
-" Reference:
-"   http://vim.wikia.com/wiki/Example_vimrc
-"   https://github.com/gmarik/Vundle.vim
-
-" Map leader
-let mapleader=","
-
 "==============================================================================
 " Plugins
 "==============================================================================
+
+" Map leader
+let mapleader=","
 
 if !empty(glob("~/.vimrc-plugins"))
     source ~/.vimrc-plugins
