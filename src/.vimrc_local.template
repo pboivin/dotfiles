@@ -1,0 +1,5 @@
+set ai
+
+SetSoftTabs 2
+
+map <F5> :!echo "Custom command here"<CR>
