@@ -13,53 +13,48 @@ call vundle#begin()
 
     " general editor enhancements
     " ---------------------------
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'jistr/vim-nerdtree-tabs'
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'henrik/vim-indexed-search'
+    Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'rking/ag.vim'
-    Plugin 'henrik/vim-indexed-search'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-unimpaired'
-    Plugin 'airblade/vim-gitgutter'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'editorconfig/editorconfig-vim'
 
     " snippets and code completion
     " ----------------------------
-    Plugin 'mattn/emmet-vim'
-"   Plugin 'phpcomplete.vim'
-    Plugin 'loremipsum'
-"   Plugin 'davidhalter/jedi-vim'
     Plugin 'MarcWeber/vim-addon-mw-utils'
-    Plugin 'tomtom/tlib_vim'
     Plugin 'garbas/vim-snipmate'
     Plugin 'honza/vim-snippets'
+    Plugin 'loremipsum'
+    Plugin 'mattn/emmet-vim'
+    Plugin 'tomtom/tlib_vim'
 
     " build tools
     " -----------
-"   Plugin 'neomake/neomake'
+    "Plugin 'neomake/neomake'
 
     " filetypes
     " ---------
-    Plugin 'tpope/vim-markdown'
-    Plugin 'tpope/vim-haml'
-    Plugin 'groenewege/vim-less'
-    Plugin 'kchmck/vim-coffee-script'
-    Plugin 'jwalton512/vim-blade'
-    Plugin 'vim-scripts/django.vim'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'mxw/vim-jsx'
-    Plugin 'lumiliet/vim-twig'
     Plugin 'digitaltoad/vim-pug'
+    Plugin 'groenewege/vim-less'
+    Plugin 'jwalton512/vim-blade'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'lumiliet/vim-twig'
+    Plugin 'mxw/vim-jsx'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'tpope/vim-haml'
+    Plugin 'tpope/vim-markdown'
+    Plugin 'vim-scripts/django.vim'
 
     " color schemes
     " -------------
-"   Plugin 'cohlin/vim-colorschemes'
-"   Plugin 'zcodes/vim-colors-basic'
-"   Plugin 'lu-ren/SerialExperimentsLain'
     Plugin 'mhartington/oceanic-next'
 
 call vundle#end()
@@ -91,24 +86,14 @@ nnoremap <leader>hs :GitGutterStageHunk<cr>
 au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
-" JEDI
-" ----
-" do not immediately open suggestion
-"let g:jedi#popup_on_dot = 0
-"let g:jedi#show_call_signatures = 0
-
-" Snippets
-"let g:UltiSnipsUsePythonVersion = 2
-
 " Color scheme
 " ------------
-"color basic-dark
-
 syntax enable
 set t_Co=256
 if (has("termguicolors"))
     set termguicolors
 endif
+
 colorscheme OceanicNext
 
 " Highlight past 80 chars
