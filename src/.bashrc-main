@@ -135,10 +135,8 @@ alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#'"
 # Helpers
 #=============================================================================
 
-if [ -d ~/.bash-helpers ]
-then
-    cd ~/.bash-helpers
-    for f in *; do
+if [ -d ~/.bash-helpers ]; then
+    for f in ~/.bash-helpers/*; do
         . "$f"
     done
 fi
