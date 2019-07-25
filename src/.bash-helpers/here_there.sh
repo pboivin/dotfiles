@@ -19,12 +19,12 @@ function there {
         name="-"
     fi
 
-    if [ "$name" == "--list" ]; then
+    if [[ "$name" == "-l" || "$name" == "--list" ]]; then
         cat "$HERE_THERE_LIST" | sort
         return
     fi
 
-    if [ "$name" == "--clear" ]; then
+    if [[ "$name" == "-c" || "$name" == "--clear" ]]; then
         echo -n "" > "$HERE_THERE_LIST"
         return
     fi
