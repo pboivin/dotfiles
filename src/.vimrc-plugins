@@ -16,6 +16,7 @@ call vundle#begin()
     Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'embear/vim-foldsearch'                 " :Fw, :Fs
     Plugin 'henrik/vim-indexed-search'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'nathanaelkane/vim-indent-guides'
