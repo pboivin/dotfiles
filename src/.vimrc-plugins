@@ -71,8 +71,14 @@ filetype plugin on
 " CtrlP
 " -----
 "let g:ctrlp_map = '<C-o>'
-let g:ctrlp_custom_ignore = 'vendor|node_modules\|\.DS_Store\|\.git'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|\.DS_Store\|\.git'
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore vendor
+      \ --ignore node_modules
+      \ -g ""'
 
 " NERDTree
 " --------
