@@ -205,7 +205,7 @@ noremap  <C-b> 9kzz
 inoremap <C-b> <Esc>9kzza
 
 " Fine-grained word jumping
-" > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn' 
+" > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn'
 " > without any conflict because of noremap
 noremap <C-Left> b
 noremap <C-Right> w
@@ -452,3 +452,43 @@ endif
 
 " Load project .vimrc if it exists
 set exrc
+
+
+"==============================================================================
+" Custom Commands Memo
+"==============================================================================
+"
+" AveOff
+" AveOn
+" DosToUnix
+" DoubleToSingleQuotes
+" Font
+" FormatJSON
+" Grep
+" GrepHelp
+" RemoveEmptyLines
+" SetFormat
+" SetHardTabs
+" SetSoftTabs
+" SingleToDoubleQuotes
+" SpellEn
+" SpellFr
+" SpellOff
+" TabsFind
+" TabsToSpaces
+" TrimLineEndings
+" UnixToDos
+"
+" AF
+" AG
+" AS
+" FI
+" FK
+" FM
+" GL
+" GP
+" GS
+" NF
+" QQ
+" WR
+
