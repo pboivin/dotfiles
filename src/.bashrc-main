@@ -108,8 +108,9 @@ alias vimm='vim -u NONE'
 
 # Edit files
 
-alias vimrc="vim -p ~/.vimrc*"
 alias bashrc="vim -p ~/.bashrc*"
+alias vimrc="vim -p ~/.vimrc*"
+alias vimsnippets="find $HOME/.vim -iname '*snippets*' | vim -"
 
 # Git
 
