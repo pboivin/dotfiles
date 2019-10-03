@@ -45,7 +45,8 @@ call vundle#begin()
 
     " filetypes
     " ---------
-    Plugin 'digitaltoad/vim-pug'
+    "Plugin 'digitaltoad/vim-pug'
+    Plugin 'pboi20/vim-pug'
     Plugin 'groenewege/vim-less'
     Plugin 'jwalton512/vim-blade'
     Plugin 'kchmck/vim-coffee-script'
