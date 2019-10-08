@@ -1,3 +1,0 @@
-" Map function key to shell command
-map <F5> :!bash some-script.sh<CR>
-

@@ -1,8 +1,0 @@
-# Common CLI tools
-
-## Homebrew
-brew install htop ag tree
-
-## APT
-sudo apt install htop silversearcher-ag tree
-
