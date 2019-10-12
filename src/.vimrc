@@ -231,6 +231,8 @@ inoremap <C-b> <Esc>9kzza
 noremap bp   :bp<CR>
 noremap bn   :bn<CR>
 noremap bl   :ls<CR>
+noremap bdd  :bd<CR>
+noremap bda  :%bd<CR>
 
 " Tab switching
 nnoremap tp  :tabprev<CR>
