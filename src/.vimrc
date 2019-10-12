@@ -174,6 +174,10 @@ command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 " Custom Movements
 "==============================================================================
 
+"------------
+" Arrows
+"------------
+
 " Go to ^ and $
 noremap  <S-Left> 0
 inoremap <S-Left> <Esc>0i
@@ -186,6 +190,23 @@ inoremap <S-Down> <Esc>3ja
 noremap  <S-Up> 3k
 inoremap <S-Up> <Esc>3ka
 
+" Faster movements up and down with scrolling
+noremap  <C-Down> 9jzz
+inoremap <C-Down> <Esc>9jzza
+noremap  <C-Up> 9kzz
+inoremap <C-Up> <Esc>9kzza
+
+" Fine-grained word jumping
+" > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn'
+" > without any conflict because of noremap
+noremap <C-Left> b
+noremap <C-Right> w
+
+"------------------
+" Standard mappings
+"------------------
+
+" Faster movements up and down
 noremap  <C-d> 3j
 inoremap <C-d> <Esc>3ja
 noremap  <C-u> 3k
@@ -197,39 +218,31 @@ noremap  <C-k> 3k
 inoremap <C-k> <Esc>3ka
 
 " Faster movements up and down with scrolling
-noremap  <C-Down> 9jzz
-inoremap <C-Down> <Esc>9jzza
-noremap  <C-Up> 9kzz
-inoremap <C-Up> <Esc>9kzza
-
 noremap  <C-f> 9jzz
 inoremap <C-f> <Esc>9jzza
 noremap  <C-b> 9kzz
 inoremap <C-b> <Esc>9kzza
 
-" Fine-grained word jumping
-" > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn'
-" > without any conflict because of noremap
-noremap <C-Left> b
-noremap <C-Right> w
+"-------------------------
+" Buffer, tabs and windows
+"-------------------------
 
 " Buffer switching
-noremap bp :bp<CR>
-noremap bn :bn<CR>
-noremap bl :ls<CR>
+noremap bp   :bp<CR>
+noremap bn   :bn<CR>
+noremap bl   :ls<CR>
 
 " Tab switching
-nnoremap tp :tabprev<CR>
-nnoremap tn :tabnext<CR>
-nnoremap tt :tabnew<CR>
-nnoremap tc :tabclose<CR>
-nnoremap te :tabnew<CR>:e .<CR>
-nnoremap t0 :tabmove 0<CR>
+nnoremap tp  :tabprev<CR>
+nnoremap tn  :tabnext<CR>
+nnoremap tt  :tabnew<CR>
+nnoremap te  :tabnew<CR>:e .<CR>
+nnoremap t0  :tabmove 0<CR>
 
-" Next Window (Fast)
+" Toggle Next Window
 noremap  <S-W> <C-W><C-W>
 
-" Next Tab (Fast)
+" Toggle Next Tab
 nnoremap <S-T> :tabnext<CR>
 
 "==============================================================================
