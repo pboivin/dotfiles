@@ -180,21 +180,15 @@ command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 
 " Go to ^ and $
 noremap  <S-Left> 0
-inoremap <S-Left> <Esc>0i
 noremap  <S-Right> $
-inoremap <S-Right> <Esc>A
 
 " Faster movements up and down
 noremap  <S-Down> 3j
-inoremap <S-Down> <Esc>3ja
 noremap  <S-Up> 3k
-inoremap <S-Up> <Esc>3ka
 
 " Faster movements up and down with scrolling
 noremap  <C-Down> 9jzz
-inoremap <C-Down> <Esc>9jzza
 noremap  <C-Up> 9kzz
-inoremap <C-Up> <Esc>9kzza
 
 " Fine-grained word jumping
 " > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn'
