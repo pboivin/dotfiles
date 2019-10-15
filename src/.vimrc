@@ -413,6 +413,15 @@ command! WR set wrap!
 " QQ - Quickly Quit
 command! QQ qa!
 
+" MA - Mouse All
+command! MA set mouse=a
+
+" MN - Mouse Normal
+command! MN set mouse=n
+
+" MN - Mouse None
+command! MZ set mouse=
+
 "==============================================================================
 " Custom Commands / Shortcuts For Plugins
 "==============================================================================
@@ -513,4 +522,7 @@ set exrc
 " NF
 " QQ
 " WR
+" MA
+" MN
+" MZ
 
