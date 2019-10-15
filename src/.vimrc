@@ -107,11 +107,11 @@ set linebreak
 "set iskeyword+=\-
 
 " Preserve selection when un/indenting lines
-vmap > >gv
-vmap < <gv
+vmap     >    >gv
+vmap     <    <gv
 
 " Deactivate exmode shortcut
-noremap Q <ESC>
+noremap  Q    <ESC>
 
 "==============================================================================
 " Copy/Paste
@@ -150,11 +150,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 nohl
 
 " Center window on search result
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap  n    nzz
+nnoremap  N    Nzz
 
 " Search for visually selected text
-vnoremap // y/<c-r>"<cr>
+vnoremap  //   y/<c-r>"<cr>
 
 " Grep files in cwd, recursive
 function! GrepFn(search)
@@ -179,61 +179,61 @@ command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 "------------
 
 " Go to ^ and $
-noremap  <S-Left> 0
-noremap  <S-Right> $
+noremap  <S-Left>     0
+noremap  <S-Right>    $
 
 " Faster movements up and down
-noremap  <S-Down> 3j
-noremap  <S-Up> 3k
+noremap  <S-Down>     4j
+noremap  <S-Up>       4k
 
 " Faster movements up and down with scrolling
-noremap  <C-Down> 9jzz
-noremap  <C-Up> 9kzz
+noremap  <C-Down>     15jzz
+noremap  <C-Up>       15kzz
 
 " Fine-grained word jumping
 " > Note that <C-Left> is assigned to 'b' and next 'bn' is assigned to ':bn'
 " > without any conflict because of noremap
-noremap <C-Left> b
-noremap <C-Right> w
+noremap  <C-Left>     b
+noremap  <C-Right>    w
 
 "------------------
 " Standard mappings
 "------------------
 
 " Faster movements up and down
-noremap  <C-d> 3j
-noremap  <C-u> 3k
+noremap  <C-d>        4j
+noremap  <C-u>        4k
 
-noremap  <C-j> 3j
-noremap  <C-k> 3k
+noremap  <C-j>        4j
+noremap  <C-k>        4k
 
 " Faster movements up and down with scrolling
-noremap  <C-f> 9jzz
-noremap  <C-b> 9kzz
+noremap  <C-f>        15jzz
+noremap  <C-b>        15kzz
 
 "-------------------------
 " Buffer, tabs and windows
 "-------------------------
 
 " Buffer switching
-noremap bp   :bp<CR>
-noremap bn   :bn<CR>
-noremap bl   :ls<CR>
-noremap bdd  :bd<CR>
-noremap bda  :%bd<CR>
+noremap   bp     :bp<CR>
+noremap   bn     :bn<CR>
+noremap   bl     :ls<CR>
+noremap   bdd    :bd<CR>
+noremap   bda    :%bd<CR>
 
 " Tab switching
-nnoremap tp  :tabprev<CR>
-nnoremap tn  :tabnext<CR>
-nnoremap tt  :tabnew<CR>
-nnoremap te  :tabnew<CR>:e .<CR>
-nnoremap t0  :tabmove 0<CR>
+nnoremap  tp     :tabprev<CR>
+nnoremap  tn     :tabnext<CR>
+nnoremap  tt     :tabnew<CR>
+nnoremap  te     :tabnew<CR>:e .<CR>
+nnoremap  t0     :tabmove 0<CR>
 
 " Toggle Next Window
-noremap  <S-W> <C-W><C-W>
+noremap   <S-W>  <C-W><C-W>
 
 " Toggle Next Tab
-nnoremap <S-T> :tabnext<CR>
+nnoremap  <S-T>  :tabnext<CR>
 
 "==============================================================================
 " GUI
@@ -249,12 +249,12 @@ command! Font set guifont=*
 " Spell Check
 "==============================================================================
 
-command! SpellFr setlocal spell spelllang=fr
-command! SpellEn setlocal spell spelllang=en
+command! SpellFr  setlocal spell spelllang=fr
+command! SpellEn  setlocal spell spelllang=en
 command! SpellOff setlocal nospell
 
 "==============================================================================
-" Custom Commands / Shortcuts
+" Custom Commands and Mappings
 "==============================================================================
 
 "------------
@@ -417,7 +417,7 @@ command! MN set mouse=n
 command! MZ set mouse=
 
 "==============================================================================
-" Custom Commands / Shortcuts For Plugins
+" Custom Commands and Mappings -- Plugins
 "==============================================================================
 
 "------
