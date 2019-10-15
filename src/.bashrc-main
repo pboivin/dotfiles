@@ -110,6 +110,7 @@ alias vimm='vim -u NONE'
 
 alias bashrc="vim -p ~/.bashrc*"
 alias vimrc="vim -p ~/.vimrc*"
+alias vimvim="cd $HOME/.vim && vim"
 alias vimsnippets="find $HOME/.vim -iname '*snippets*' | vim -"
 
 # Git
