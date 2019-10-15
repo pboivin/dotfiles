@@ -208,20 +208,14 @@ noremap <C-Right> w
 
 " Faster movements up and down
 noremap  <C-d> 3j
-inoremap <C-d> <Esc>3ja
 noremap  <C-u> 3k
-inoremap <C-u> <Esc>3ka
 
 noremap  <C-j> 3j
-inoremap <C-j> <Esc>3ja
 noremap  <C-k> 3k
-inoremap <C-k> <Esc>3ka
 
 " Faster movements up and down with scrolling
 noremap  <C-f> 9jzz
-inoremap <C-f> <Esc>9jzza
 noremap  <C-b> 9kzz
-inoremap <C-b> <Esc>9kzza
 
 "-------------------------
 " Buffer, tabs and windows
