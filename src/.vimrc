@@ -304,6 +304,16 @@ function! SetHardTabsFn(width)
 endfunction
 command! -nargs=1 SetHardTabs call SetHardTabsFn("<args>")
 
+" Refresh indent guides
+function! RefreshIndentGuidesFn()
+    execute "normal ,ig,ig"
+endfunction
+command! RefreshIndentGuides call RefreshIndentGuidesFn()
+
+" Shortcuts
+noremap <LEADER>s2  :SetSoftTabs 2<CR>:RefreshIndentGuides<CR>
+noremap <LEADER>s4  :SetSoftTabs 4<CR>:RefreshIndentGuides<CR>
+
 "------------
 " Quoting
 "------------
