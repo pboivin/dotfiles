@@ -124,6 +124,13 @@ alias gl1="git log --oneline"
 alias gs="git status"
 alias gb="git branch"
 
+# Vagrant
+
+alias vus="vagrant up && vagrant ssh"
+alias vup="vagrant up"
+alias vsh="vagrant ssh"
+alias vpr="vagrant reload --provision"
+
 # Places
 
 alias wo="cd $HOME/Workspace"
