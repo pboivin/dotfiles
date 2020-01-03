@@ -240,7 +240,7 @@ nnoremap  <S-T>  :tabnext<CR>
 "==============================================================================
 
 " Default font
-set guifont=Monospace\ 9
+set guifont=Monospace\ 11
 
 " Font select shortcut
 command! Font set guifont=*
