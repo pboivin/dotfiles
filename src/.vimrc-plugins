@@ -83,6 +83,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 " NERDTree
 " --------
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_focus_on_files = 1
