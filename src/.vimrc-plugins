@@ -30,6 +30,8 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
 
+    Plugin 'majutsushi/tagbar'
+
     " snippets and code completion
     " ----------------------------
     Plugin 'MarcWeber/vim-addon-mw-utils'
