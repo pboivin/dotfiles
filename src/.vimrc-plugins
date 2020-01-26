@@ -36,7 +36,7 @@ call vundle#begin()
     " ----------------------------
     Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'garbas/vim-snipmate'
-    Plugin 'honza/vim-snippets'
+    "Plugin 'honza/vim-snippets'
     Plugin 'loremipsum'
     Plugin 'mattn/emmet-vim'
     Plugin 'tomtom/tlib_vim'
