@@ -464,7 +464,7 @@ command! GS Gstatus
 " File types
 "==============================================================================
 
-au BufRead,BufNewFile *.vue set filetype=html
+"au BufRead,BufNewFile *.vue set filetype=html
 au BufRead,BufNewFile *.svelte set filetype=html
 
 "==============================================================================

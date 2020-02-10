@@ -58,6 +58,7 @@ call vundle#begin()
     Plugin 'tpope/vim-haml'
     Plugin 'tpope/vim-markdown'
     Plugin 'vim-scripts/django.vim'
+    Plugin 'posva/vim-vue'
 
     " color schemes
     " -------------
