@@ -106,6 +106,7 @@ function findir {
 # Editors
 
 alias vimm='vim -u NONE'
+alias vimt='vim -c NERDTreeTabsOpen'
 
 # Edit files
 
@@ -135,9 +136,11 @@ alias vpr="vagrant reload --provision"
 # Places
 
 alias wo="cd $HOME/Workspace"
+alias dotfiles="cd $HOME/Workspace/dotfiles"
 
 # Misc
 
+alias af="ag -g"
 alias tmux="TERM=screen-256color-bce tmux"
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#'"
 
