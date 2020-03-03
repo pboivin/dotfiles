@@ -59,6 +59,7 @@ call vundle#begin()
     Plugin 'tpope/vim-markdown'
     Plugin 'vim-scripts/django.vim'
     Plugin 'posva/vim-vue'
+    Plugin 'stephpy/vim-yaml'
 
     " color schemes
     " -------------
