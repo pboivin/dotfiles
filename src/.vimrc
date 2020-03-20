@@ -466,6 +466,7 @@ command! GS Gstatus
 
 "au BufRead,BufNewFile *.vue set filetype=html
 au BufRead,BufNewFile *.svelte set filetype=html
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 "==============================================================================
 " Extra config. files
