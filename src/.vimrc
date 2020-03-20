@@ -174,9 +174,9 @@ command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 " Custom Movements
 "==============================================================================
 
-"------------
+"----------
 " Arrows
-"------------
+"----------
 
 " Go to ^ and $
 noremap  <S-Left>     0
@@ -196,9 +196,9 @@ noremap  <C-Up>       15kzz
 noremap  <C-Left>     b
 noremap  <C-Right>    w
 
-"------------------
+"---------------------
 " Standard mappings
-"------------------
+"---------------------
 
 " Faster movements up and down
 noremap  <C-d>        4j
@@ -211,9 +211,9 @@ noremap  <C-k>        4k
 noremap  <C-f>        15jzz
 noremap  <C-b>        15kzz
 
-"-------------------------
+"----------------------------
 " Buffer, tabs and windows
-"-------------------------
+"----------------------------
 
 " Buffer switching
 noremap   bp     :bp<CR>
@@ -257,9 +257,9 @@ command! SpellOff setlocal nospell
 " Custom Commands and Mappings
 "==============================================================================
 
-"------------
+"--------------
 " Whitespace
-"------------
+"--------------
 
 function! TabsToSpacesFn()
     let l:count = 0
@@ -308,17 +308,17 @@ command! RefreshIndentGuides call RefreshIndentGuidesFn()
 noremap <LEADER>s2  :SetSoftTabs 2<CR>:RefreshIndentGuides<CR>
 noremap <LEADER>s4  :SetSoftTabs 4<CR>:RefreshIndentGuides<CR>
 
-"------------
+"-----------
 " Quoting
-"------------
+"-----------
 
 command! -range SingleToDoubleQuotes '<,'>s/'/"/g
 
 command! -range DoubleToSingleQuotes '<,'>s/"/'/g
 
-"---------------------------
+"-----------------------------
 " Autoindent + Virtual Edit
-"---------------------------
+"-----------------------------
 "
 " Useful mode for drawing tables or ascii art.
 "
@@ -335,9 +335,9 @@ function! AveOffFn()
 endfunction
 command! AveOff call AveOffFn()
 
-"---------
+"-----------
 " Folding
-"---------
+"-----------
 
 " FI - Activate folding by indent. Close all folds.
 function! FoldIndentFn()
@@ -360,9 +360,9 @@ function! FoldManualFn()
 endfunction
 command! FM call FoldManualFn()
 
-"-------------
+"---------------
 " File Format
-"-------------
+"---------------
 "
 " Reference: http://vim.wikia.com/wiki/File_format
 "
@@ -382,9 +382,9 @@ function! UnixToDosFn()
 endfunction
 command! UnixToDos call UnixToDosFn()
 
-"-------------
+"---------------
 " Code Format
-"-------------
+"---------------
 
 " Set filetype for auto formatting (=)
 function! SetFormatFn(filetype)
@@ -397,9 +397,9 @@ command! -nargs=1 SetFormat call SetFormatFn("<args>")
 " Format JSON buffer
 command! FormatJSON %!python -mjson.tool
 
-"------
+"--------
 " Misc
-"------
+"--------
 
 " WR - Toggle line wrapping
 command! WR set wrap!
@@ -421,7 +421,7 @@ command! MZ set mouse=
 "==============================================================================
 
 "------
-"  AG
+" AG
 "------
 
 " AG - Search content
@@ -433,16 +433,16 @@ command! AS AgFromSearch
 " AF - Search file names
 command! -nargs=* AF AgFile <args>
 
-"-----------------
+"-------------------
 " NerdTree / Tabs
-"-----------------
+"-------------------
 
 " NF - Highlight current file in Nerd Tree
 command! NF NERDTreeTabsFind
 
-"----------------
+"------------------
 " Git / Fugitive
-"----------------
+"------------------
 
 " GP - Get the output of 'git log -p' for current file. Opens in new tab.
 function! GitLogPatchFn()

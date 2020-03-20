@@ -1,18 +1,22 @@
-"=======================================
+"==============================================================================
 " Initialize Plugins
-"=======================================
+"==============================================================================
 
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-    " let Vundle manage Vundle, required
-    " ----------------------------------
+    "--------------------------------------
+    " let vundle manage vundle, required
+    "--------------------------------------
+
     Plugin 'gmarik/Vundle.vim'
 
+    "-------------------------------
     " general editor enhancements
-    " ---------------------------
+    "-------------------------------
+
     Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'editorconfig/editorconfig-vim'
@@ -29,25 +33,23 @@ call vundle#begin()
     Plugin 'tpope/vim-unimpaired'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
-
     Plugin 'majutsushi/tagbar'
 
+    "--------------------------------
     " snippets and code completion
-    " ----------------------------
+    "--------------------------------
+
     Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'garbas/vim-snipmate'
-    "Plugin 'honza/vim-snippets'
     Plugin 'loremipsum'
     Plugin 'mattn/emmet-vim'
     Plugin 'tomtom/tlib_vim'
+    "Plugin 'honza/vim-snippets'
 
-    " build tools
-    " -----------
-    "Plugin 'neomake/neomake'
-
+    "-------------
     " filetypes
-    " ---------
-    "Plugin 'digitaltoad/vim-pug'
+    "-------------
+
     Plugin 'pboi20/vim-pug'
     Plugin 'groenewege/vim-less'
     Plugin 'jwalton512/vim-blade'
@@ -61,22 +63,24 @@ call vundle#begin()
     Plugin 'posva/vim-vue'
     Plugin 'stephpy/vim-yaml'
 
+    "-----------------
     " color schemes
-    " -------------
+    "-----------------
+
     Plugin 'mhartington/oceanic-next'
 
 call vundle#end()
 filetype plugin on
 
-"=======================================
+"==============================================================================
 " Configuration
-"=======================================
+"==============================================================================
 
-" CtrlP
-" -----
-"let g:ctrlp_map = '<C-o>'
+"---------
+" ctrlp
+"---------
+
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|\.DS_Store\|\.git'
-"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
@@ -84,8 +88,10 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore node_modules
       \ -g ""'
 
-" NERDTree
-" --------
+"------------
+" nerdtree
+"------------
+
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -93,18 +99,24 @@ let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_focus_on_files = 0
 nnoremap <leader>t :NERDTreeTabsToggle<cr>
 
+"--------------
 " git-gutter
-" ----------
+"--------------
+
 nnoremap <leader>hn :GitGutterNextHunk<cr>zz
 nnoremap <leader>hs :GitGutterStageHunk<cr>
 
-" File types
-" ----------
+"--------------
+" filetypes
+"--------------
+
 au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.j2 set filetype=htmldjango
 
-" Color scheme
-" ------------
+"----------------
+" color scheme
+"----------------
+
 syntax enable
 set t_Co=256
 if (has("termguicolors"))
@@ -113,12 +125,15 @@ endif
 
 colorscheme OceanicNext
 
-" Highlight past 80 chars
+" highlight past 80 chars
 let &colorcolumn=join(range(80,999),",")
 
-" vim-indent-guides  (<leader>ig)
-" -----------------
+"-----------------------------
+" vim-indent-guides   (,ig)
+"-----------------------------
+
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235 guibg=#1b2b34
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 guibg=#1f2f3f
+
