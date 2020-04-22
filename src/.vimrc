@@ -31,8 +31,9 @@ set nobackup
 
 " Enable swap files
 set swapfile
-" Alternatively,
-" > set directory=~/.vim/swap
+
+" Use external directory for swap files
+set directory=~/.vim/swap
 
 " Enable syntax highlighting
 syntax on
