@@ -34,6 +34,7 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'majutsushi/tagbar'
+    Plugin 'vim-scripts/BufOnly.vim'
 
     "--------------------------------
     " snippets and code completion
@@ -62,6 +63,7 @@ call vundle#begin()
     Plugin 'vim-scripts/django.vim'
     Plugin 'posva/vim-vue'
     Plugin 'stephpy/vim-yaml'
+    Plugin 'leafgarland/typescript-vim'
 
     "-----------------
     " color schemes
