@@ -217,6 +217,7 @@ noremap  <C-b>        15kzz
 "----------------------------
 
 " Buffer switching
+noremap   b0     :b 1<CR>
 noremap   bp     :bp<CR>
 noremap   bn     :bn<CR>
 noremap   bl     :ls<CR>
@@ -308,6 +309,7 @@ command! RefreshIndentGuides call RefreshIndentGuidesFn()
 " Shortcuts
 noremap <LEADER>s2  :SetSoftTabs 2<CR>:RefreshIndentGuides<CR>
 noremap <LEADER>s4  :SetSoftTabs 4<CR>:RefreshIndentGuides<CR>
+noremap <LEADER>s8  :SetHardTabs 8<CR>:RefreshIndentGuides<CR>
 
 "-----------
 " Quoting
@@ -328,13 +330,13 @@ function! AveOnFn()
     set autoindent
     set virtualedit=all
 endfunction
-command! AveOn call AveOnFn()
+command! Ave call AveOnFn()
 
 function! AveOffFn()
     set noautoindent
     set virtualedit=
 endfunction
-command! AveOff call AveOffFn()
+command! NoAve call AveOffFn()
 
 "-----------
 " Folding
