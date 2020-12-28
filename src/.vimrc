@@ -419,6 +419,9 @@ command! MN set mouse=n
 " MN - Mouse None
 command! MZ set mouse=
 
+" Browse here
+noremap <LEADER>e  :e.<CR>
+
 "==============================================================================
 " Custom Commands and Mappings -- Plugins
 "==============================================================================
