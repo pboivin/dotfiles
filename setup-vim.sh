@@ -17,6 +17,7 @@ mkdir ".vim/ftdetect"
 mkdir ".vim/plugin"
 mkdir ".vim/snippets"
 mkdir ".vim/spell"
+mkdir ".vim/swap"
 mkdir ".vim/syntax"
 
 # install Vundle
