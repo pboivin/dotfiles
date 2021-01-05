@@ -217,19 +217,22 @@ noremap  <C-b>        15kzz
 "----------------------------
 
 " Buffer switching
-noremap   b0     :b 1<CR>
-noremap   bp     :bp<CR>
-noremap   bn     :bn<CR>
-noremap   bl     :ls<CR>
-noremap   bdd    :bd<CR>
-noremap   bda    :%bd<CR>
+"noremap   b0     :b 1<CR>
+"noremap   bp     :bp<CR>
+"noremap   bn     :bn<CR>
+"noremap   bl     :ls<CR>
+"noremap   bdd    :bd<CR>
+"noremap   bda    :%bd<CR>
 
 " Tab switching
-nnoremap  tp     :tabprev<CR>
-nnoremap  tn     :tabnext<CR>
-nnoremap  tt     :tabnew<CR>
-nnoremap  te     :tabnew<CR>:e .<CR>
-nnoremap  t0     :tabmove 0<CR>
+"nnoremap  tp     :tabprev<CR>
+"nnoremap  tn     :tabnext<CR>
+"nnoremap  tt     :tabnew<CR>
+"nnoremap  te     :tabnew<CR>:e .<CR>
+"nnoremap  t0     :tabmove 0<CR>
+
+" Toggle Next Buffer
+noremap   <S-B>  :bnext<CR>
 
 " Toggle Next Window
 noremap   <S-W>  <C-W><C-W>
@@ -421,6 +424,9 @@ command! MZ set mouse=
 
 " Browse here
 noremap <LEADER>e  :e.<CR>
+
+" Save with ctrl+s
+noremap  <C-s>     :w<CR>
 
 "==============================================================================
 " Custom Commands and Mappings -- Plugins
