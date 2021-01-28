@@ -153,6 +153,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 
+alias man-list="man -k . | less"
+
 #=============================================================================
 # Helpers
 #=============================================================================
