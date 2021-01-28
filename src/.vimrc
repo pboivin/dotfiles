@@ -217,19 +217,19 @@ noremap  <C-b>        15kzz
 "----------------------------
 
 " Buffer switching
-"noremap   b0     :b 1<CR>
-"noremap   bp     :bp<CR>
-"noremap   bn     :bn<CR>
-"noremap   bl     :ls<CR>
-"noremap   bdd    :bd<CR>
-"noremap   bda    :%bd<CR>
+noremap   <leader>b0     :bfirst<CR>
+noremap   <leader>bp     :bp<CR>
+noremap   <leader>bn     :bn<CR>
+noremap   <leader>bl     :ls<CR>
+noremap   <leader>bdd    :bd<CR>
+noremap   <leader>bda    :%bd<CR>
 
 " Tab switching
-"nnoremap  tp     :tabprev<CR>
-"nnoremap  tn     :tabnext<CR>
-"nnoremap  tt     :tabnew<CR>
-"nnoremap  te     :tabnew<CR>:e .<CR>
-"nnoremap  t0     :tabmove 0<CR>
+nnoremap  <leader>tp     :tabprev<CR>
+nnoremap  <leader>tn     :tabnext<CR>
+nnoremap  <leader>tt     :tabnew<CR>
+nnoremap  <leader>te     :tabnew<CR>:e .<CR>
+nnoremap  <leader>t0     :tabmove 0<CR>
 
 " Toggle Next Buffer
 noremap   <S-B>  :bnext<CR>
