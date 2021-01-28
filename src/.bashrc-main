@@ -2,8 +2,8 @@
 # Shell options
 #=============================================================================
 
-# enable ctrl+s in vim
-stty -ixon
+# enable ctrl+s in vim for interactive shells
+[[ $- == *i* ]] && stty -ixon
 
 #=============================================================================
 # Exports
