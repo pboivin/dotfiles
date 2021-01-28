@@ -99,7 +99,7 @@ let g:NERDTreeIgnore = ['\.swp$']
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_focus_on_files = 0
-nnoremap <leader>t :NERDTreeTabsToggle<cr>
+nnoremap <C-t> :NERDTreeTabsToggle<cr>
 
 "--------------
 " git-gutter
