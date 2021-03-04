@@ -132,6 +132,7 @@ alias gll="git log --name-status"
 alias gl1="git log --oneline"
 alias gs="git status"
 alias gb="git branch"
+alias gba="git branch -a"
 
 # Vagrant
 
