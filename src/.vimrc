@@ -404,9 +404,9 @@ command! -nargs=1 SetFormat call SetFormatFn("<args>")
 command! FormatJSON %!python -mjson.tool
 
 " Format JS/CSS/HTML buffer (npm -g install js-beautify)
-command! FormatJS %!js-beautify
-command! FormatCSS %!js-beautify
-command! FormatHTML %!js-beautify
+command! FormatJS %!js-beautify --type js
+command! FormatCSS %!js-beautify --type css
+command! FormatHTML %!js-beautify --type html
 
 "--------
 " Misc
