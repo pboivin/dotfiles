@@ -50,15 +50,13 @@ PS1="$(color_normal $COLOR_YELLOW)$PROMPT_DATE $PROMPT_USER : $(color_bold $COLO
 
 # Platform-specific
 
-if [ "$(uname)" == "Linux" ]
-then
+if [ "$(uname)" == "Linux" ]; then
     alias ls='env ls -FC --color=auto --group-directories-first'
     alias l1='env ls -1Fv --color=auto'
     alias files='nautilus .'
 fi
 
-if [ "$(uname)" == "Darwin" ]
-then
+if [ "$(uname)" == "Darwin" ]; then
     alias ls='env ls -FCG'
     alias l1='env ls -1FG'
     alias mvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
@@ -88,8 +86,7 @@ function cdd() {
 }
 
 function mkd {
-    if [ -z "$1" ]
-    then
+    if [ -z "$1" ]; then
         echo "Error: need one argument"
         return
     fi
@@ -100,14 +97,6 @@ function mkd {
 
 function findi {
     find . -iname "$1"
-}
-
-function findiv {
-    find . -iname "$1" | vim -
-}
-
-function findir {
-    find . -iname "$1" -type d
 }
 
 # Editors
@@ -139,8 +128,8 @@ alias gba="git branch -a"
 alias vus="vagrant up && vagrant ssh"
 alias vuss="sudo echo && vagrant up && vagrant ssh"
 alias vup="vagrant up"
+alias vpr="vagrant up --provision"
 alias vsh="vagrant ssh"
-alias vpr="vagrant reload --provision"
 
 # Places
 
@@ -150,11 +139,11 @@ alias dotfiles="cd $HOME/Workspace/dotfiles"
 # Misc
 
 alias af="ag -g"
-alias tmux="TERM=screen-256color-bce tmux"
-alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"
 alias rg="ranger"
+alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
+alias tmux="TERM=screen-256color-bce tmux"
 
 #=============================================================================
 # Helpers

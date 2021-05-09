@@ -45,8 +45,7 @@ function there {
 function _there_prepare_locations() {
     touch "$HERE_THERE_LIST"
 
-    cat "$HERE_THERE_LIST" | awk '
-    {
+    cat "$HERE_THERE_LIST" | awk ' {
         line = $0;
         location = $1;
         locations[location] = line;
@@ -63,8 +62,7 @@ function _there_prepare_locations() {
 function _there_find_by_name() {
     local name="$1"
 
-    cat "$HERE_THERE_LIST" | awk '
-    {
+    cat "$HERE_THERE_LIST" | awk ' {
         location = $1;
         $1 = "";
         locations[location] = $0;
