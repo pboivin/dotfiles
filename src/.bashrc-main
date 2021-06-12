@@ -130,6 +130,7 @@ alias vuss="sudo echo && vagrant up && vagrant ssh"
 alias vup="vagrant up"
 alias vpr="vagrant up --provision"
 alias vsh="vagrant ssh"
+alias vagrant-stop-all="vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I {} VBoxManage controlvm {} poweroff"
 
 # Places
 
@@ -144,6 +145,8 @@ alias man-list="man -k . | less"
 alias rg="ranger"
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias tmux="TERM=screen-256color-bce tmux"
+
+alias php-class-map="ag --group '(class |interface |trait |function )'"
 
 #=============================================================================
 # Helpers
