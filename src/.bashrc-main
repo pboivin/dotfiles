@@ -70,6 +70,7 @@ alias l='ls -lh'
 alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
+alias cl='clear && l'
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -99,6 +100,10 @@ function findi {
     find . -iname "$1"
 }
 
+function did {
+    history | grep -i "$1"
+}
+
 # Editors
 
 alias vimm='vim -u NONE'
@@ -107,6 +112,7 @@ alias vimt='vim -c NERDTreeTabsOpen'
 # Edit files
 
 alias bashrc="vim -p ~/.bashrc*"
+alias bashrc-reload="source $HOME/.bashrc"
 alias vimrc="vim -p ~/.vimrc*"
 alias vimvim="cd $HOME/.vim && vim"
 alias vimsnippets="find $HOME/.vim -iname '*snippets*' | vim -"
@@ -122,6 +128,16 @@ alias gl1="git log --oneline"
 alias gs="git status"
 alias gb="git branch"
 alias gba="git branch -a"
+alias gk="git checkout"
+alias git-initial="git init . && git add . && git commit -am Initial"
+alias gcl="_git_clone_cd"
+
+function _git_clone_cd() {
+    local repo="$1"
+    local dir="$2"
+    if [ "$dir" == "" ]; then dir=$(basename -s .git "$repo"); fi
+    git clone "$repo" && cd "$dir"
+}
 
 # Vagrant
 
@@ -142,7 +158,8 @@ alias dotfiles="cd $HOME/Workspace/dotfiles"
 alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"
-alias rg="ranger"
+#alias rg="ranger"
+alias rg='ranger --choosedir=/tmp/_ranger_dir && cd `cat /tmp/_ranger_dir`'
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias tmux="TERM=screen-256color-bce tmux"
 
