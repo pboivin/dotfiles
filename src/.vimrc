@@ -223,6 +223,7 @@ noremap   <leader>bn     :bn<CR>
 noremap   <leader>bl     :ls<CR>
 noremap   <leader>bdd    :bd<CR>
 noremap   <leader>bda    :%bd<CR>
+noremap   <leader>b      :BuffergatorOpen<CR>
 
 " Tab switching
 nnoremap  <leader>tp     :tabprev<CR>
@@ -483,6 +484,7 @@ command! GS Gstatus
 
 "au BufRead,BufNewFile *.vue set filetype=html
 au BufRead,BufNewFile *.svelte set filetype=html
+au BufRead,BufNewFile *.antlers.html set filetype=handlebars
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 "==============================================================================
