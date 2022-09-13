@@ -1,6 +1,6 @@
-function pdftopng {
+function pdf_to_png {
     if [ "$1" == "" ]; then
-        echo "Usage: pdftopng input.pdf"
+        echo "Usage: pdf_to_png input.pdf"
         return 1
     fi
 
@@ -8,9 +8,9 @@ function pdftopng {
     pdftoppm "$1" "$outfile" -png
 }
 
-function pdftojpg {
+function pdf_to_jpg {
     if [ "$1" == "" ]; then
-        echo "Usage: pdftojpg input.pdf"
+        echo "Usage: pdf_to_jpg input.pdf"
         return 1
     fi
 
