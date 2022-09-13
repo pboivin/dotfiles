@@ -35,6 +35,8 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'majutsushi/tagbar'
     Plugin 'vim-scripts/BufOnly.vim'
+    Plugin 'matze/vim-move'
+    Plugin 'pboivin/vim-buffergator'
 
     "--------------------------------
     " snippets and code completion
@@ -45,13 +47,13 @@ call vundle#begin()
     Plugin 'loremipsum'
     Plugin 'mattn/emmet-vim'
     Plugin 'tomtom/tlib_vim'
-    "Plugin 'honza/vim-snippets'
+    Plugin 'honza/vim-snippets'
 
     "-------------
     " filetypes
     "-------------
 
-    Plugin 'pboi20/vim-pug'
+    Plugin 'pboivin/vim-pug'
     Plugin 'groenewege/vim-less'
     Plugin 'jwalton512/vim-blade'
     Plugin 'kchmck/vim-coffee-script'
@@ -64,6 +66,7 @@ call vundle#begin()
     Plugin 'posva/vim-vue'
     Plugin 'stephpy/vim-yaml'
     Plugin 'leafgarland/typescript-vim'
+    Plugin 'mustache/vim-mustache-handlebars'
 
     "-----------------
     " color schemes
@@ -138,4 +141,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235 guibg=#1b2b34
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 guibg=#1f2f3f
+
+"-----------------------------
+" vim-buffergator
+"-----------------------------
+"
+let g:buffergator_suppress_keymaps = 1
 
