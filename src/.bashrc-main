@@ -131,6 +131,7 @@ alias gba="git branch -a"
 alias gk="git checkout"
 alias git-initial="git init . && git add . && git commit -am Initial"
 alias gcl="_git_clone_cd"
+alias gfa="git fetch --all"
 
 function _git_clone_cd() {
     local repo="$1"
@@ -148,10 +149,33 @@ alias vpr="vagrant up --provision"
 alias vsh="vagrant ssh"
 alias vagrant-stop-all="vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I {} VBoxManage controlvm {} poweroff"
 
+
 # Places
 
-alias wo="cd $HOME/Workspace"
 alias dotfiles="cd $HOME/Workspace/dotfiles"
+alias wo="_workspace"
+
+# usage:
+#   wo
+#   wo -t
+#   wo -t new_temp_dir
+function _workspace() {
+    if [ "$1" == "" ]; then
+        cd "$HOME/Workspace"
+        return
+    fi
+
+    if [ "$1" == "-t" ]; then
+        if [ "$2" == "" ]; then
+            cd "$HOME/Workspace/tmp"
+        else
+            mkdir -p "$HOME/Workspace/tmp/$2"
+            cd "$HOME/Workspace/tmp/$2"
+        fi
+        return
+    fi
+}
+
 
 # Misc
 
