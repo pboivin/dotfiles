@@ -183,7 +183,7 @@ alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"
 #alias rg="ranger"
-alias rg='ranger --choosedir=/tmp/_ranger_dir && cd `cat /tmp/_ranger_dir`'
+alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias tmux="TERM=screen-256color-bce tmux"
 
