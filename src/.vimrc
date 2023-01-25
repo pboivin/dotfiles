@@ -104,6 +104,10 @@ set tabstop=8
 set wrap
 set linebreak
 
+" Indent wrapped lines, add 2 more spaces 
+set breakindent
+let &showbreak='  '
+
 " Include hyphenated keywords in autocomplete suggestions
 "set iskeyword+=\-
 
