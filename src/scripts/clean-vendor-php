@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+set -e
+
+function show_usage() {
+    echo ""
+    echo "Usage: clean-vendor-php [--delete]"
+    echo ""
+
+    exit 0
+}
+
+function exec_vendor() {
+    local cmd="$1"
+
+    find . -name 'autoload.php' -print0 |
+        while IFS= read -r -d '' line; do
+            local dirname_=$(dirname "$line")
+
+            if [ -d "$dirname_" ]; then
+                local basedirname_=$(basename "$dirname_")
+
+                if [ "$basedirname_" == "vendor" ]; then
+                    $cmd "$dirname_"
+                fi
+            fi
+        done
+}
+
+function find_vendor() {
+    exec_vendor "echo"
+
+    echo ""
+    echo "Find only, use --delete to proceed"
+    echo ""
+
+    exit 0
+}
+
+function delete_vendor() {
+    exec_vendor "rm -rf"
+
+    echo ""
+    echo "Files deleted"
+    echo ""
+
+    exit 0
+}
+
+case "$1" in
+    -h) show_usage ;;
+    --help) show_usage ;;
+
+    --delete) delete_vendor ;;
+
+    *) find_vendor ;;
+esac
+
