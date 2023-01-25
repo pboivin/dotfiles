@@ -4,7 +4,7 @@ set -e
 
 function show_usage() {
     echo ""
-    echo "Usage: clean-node-modules [--delete]"
+    echo "Usage: find-node-modules [--delete]"
     echo ""
 
     exit 0

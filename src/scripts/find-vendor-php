@@ -4,7 +4,7 @@ set -e
 
 function show_usage() {
     echo ""
-    echo "Usage: clean-vendor-php [--delete]"
+    echo "Usage: find-vendor-php [--delete]"
     echo ""
 
     exit 0
