@@ -48,7 +48,7 @@ PS1="$(color_normal $COLOR_YELLOW)$PROMPT_DATE $PROMPT_USER : $(color_bold $COLO
 # Aliases
 #=============================================================================
 
-# Platform-specific
+## Platform-specific
 
 if [ "$(uname)" == "Linux" ]; then
     alias ls='env ls -FC --color=auto --group-directories-first'
@@ -64,7 +64,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias files='open -a finder .'
 fi
 
-# Shell
+## Shell
 
 alias l='ls -lh'
 alias ll='l -A'
@@ -77,6 +77,22 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# lazy cd
+function f() {
+    if [ $# -lt 1 ]; then
+        echo "Error: need one argument"
+    else
+        cd *"$1"*
+    fi
+}
+
+# cd to first available directory
+function ff() {
+    local destination=$(ls -1d */ | head -1)
+    cd "$destination"
+}
+
+# cd to parent directory of a file
 function cdd() {
     if [ $# -lt 1 ]; then
         echo "Error: need one argument"
@@ -86,6 +102,7 @@ function cdd() {
     fi
 }
 
+# make directory and cd into it
 function mkd {
     if [ -z "$1" ]; then
         echo "Error: need one argument"
@@ -96,20 +113,22 @@ function mkd {
     cd "$1"
 }
 
+# lazy find
 function findi {
     find . -iname "$1"
 }
 
+# lazy history
 function did {
     history | grep -i "$1"
 }
 
-# Editors
+## Editors
 
 alias vimm='vim -u NONE'
 alias vimt='vim -c NERDTreeTabsOpen'
 
-# Edit files
+## Edit files
 
 alias bashrc="vim -p ~/.bashrc*"
 alias bashrc-reload="source $HOME/.bashrc"
@@ -117,7 +136,7 @@ alias vimrc="vim -p ~/.vimrc*"
 alias vimvim="cd $HOME/.vim && vim"
 alias vimsnippets="find $HOME/.vim -iname '*snippets*' | vim -"
 
-# Git
+## Git
 
 alias gd="git diff"
 alias gdh="git diff HEAD"
@@ -140,7 +159,7 @@ function _git_clone_cd() {
     git clone "$repo" && cd "$dir"
 }
 
-# Vagrant
+## Vagrant
 
 alias vus="vagrant up && vagrant ssh"
 alias vuss="sudo echo && vagrant up && vagrant ssh"
@@ -150,7 +169,7 @@ alias vsh="vagrant ssh"
 alias vagrant-stop-all="vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I {} VBoxManage controlvm {} poweroff"
 
 
-# Places
+## Places
 
 alias dotfiles="cd $HOME/Workspace/dotfiles"
 alias wo="_workspace"
@@ -177,7 +196,7 @@ function _workspace() {
 }
 
 
-# Misc
+## Misc
 
 alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
@@ -186,8 +205,8 @@ alias man-list="man -k . | less"
 alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias tmux="TERM=screen-256color-bce tmux"
-
 alias php-class-map="ag --group '(class |interface |trait |function )'"
+alias cf="catfish ."
 
 #=============================================================================
 # Helpers
