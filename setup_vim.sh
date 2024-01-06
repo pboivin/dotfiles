@@ -4,7 +4,7 @@ cd "$HOME"
 
 # backup existing .vim
 if [ -e ".vim" ]; then
-    mv ".vim" ".vim-bk-$(date +%s)"
+    mv ".vim" ".vim.backup.$(date +%s)"
 fi
 
 # create .vim directory structure
@@ -20,9 +20,5 @@ mkdir ".vim/spell"
 mkdir ".vim/swap"
 mkdir ".vim/syntax"
 
-# install Vundle
-cd ".vim/bundle"
-git clone https://github.com/gmarik/Vundle.vim.git Vundle.vim
+# TODO install plugins
 
-# run vim and install plugins
-vim -c "PluginUpdate"
