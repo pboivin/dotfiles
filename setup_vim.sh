@@ -22,3 +22,6 @@ mkdir ".vim/syntax"
 
 # TODO install plugins
 
+echo
+echo DONE
+echo

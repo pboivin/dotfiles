@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ "$1" == "" ]; then
+    echo "Usage: pdf-to-png input.pdf"
+    exit 1
+fi
+
+OUTPUT=$(echo "$1" | sed 's/\.pdf//g')
+
+pdftoppm "$1" "$OUTPUT" -png

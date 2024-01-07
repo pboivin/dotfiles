@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
 
+BACKUP_FILES="false" # otherwise existing files will be skipped
 LINK_FILES="true" # otherwise files will be copied
-SOURCE="$PWD/config"
+
+CONFIG="$PWD/config"
+SCRIPTS="$PWD/scripts"
 DESTINATION="$HOME"
-CONFIG_FILES=".gitconfig .gitignore_global .vimrc"
+CONFIG_FILES=".bashrc_main .gitconfig .gitignore_global .tmux.conf .vimrc"
 CONFIG_LOCALS=".bashrc_local .vimrc_local"
 
 #
 # Helper functions
 #
 
-function say() {
-    echo
-    echo "$1"
-}
-
 function backup_file() {
     local original_file="$1"
     local backup_file="$original_file.backup.$(date +%s)"
 
     if [ -e "$original_file" ]; then
-        say "Backing up $original_file"
+        echo
+        echo "Backing up $original_file"
         mv "$original_file" "$backup_file"
     fi
 }
@@ -29,12 +28,42 @@ function install_file() {
     local from_file="$1"
     local to_file="$2"
 
-    say "Installing $to_file"
+    if [ ! -e "$from_file" ]; then
+        echo "ERROR: $from_file (file not found)"
+        exit 1
+    fi
 
-    if [ "$LINK_FILES" == "true" ]; then
-        ln -s "$from_file" "$to_file"
+    if [ -e "$to_file" ]; then
+        echo
+        echo "Skipping $to_file (file exists)"
     else
-        cp -r "$from_file" "$to_file"
+        echo
+        echo "Installing $to_file"
+
+        if [ "$LINK_FILES" == "true" ]; then
+            ln -s "$from_file" "$to_file"
+        else
+            cp -r "$from_file" "$to_file"
+        fi
+    fi
+}
+
+function install_local_file() {
+    local from_file="$1"
+    local to_file="$2"
+
+    if [ -e "$to_file" ]; then
+        echo
+        echo "Skipping $to_file (file exists)"
+    else
+        echo
+        echo "Installing $to_file"
+
+        if [ -e "$from_file" ]; then
+            cp -r "$from_file" "$to_file"
+        else
+            touch "$to_file"
+        fi
     fi
 }
 
@@ -42,10 +71,10 @@ function install_file() {
 # Check if we're in the dotfiles directory
 #
 
-if [ -e "$SOURCE" ]; then
-    say "Ready"
+if [ -e "$CONFIG" ]; then
+    echo
 else
-    say "Error: can't find the $SOURCE folder"
+    echo "Error: can't find the $CONFIG folder"
     exit 1
 fi
 
@@ -54,10 +83,13 @@ fi
 #
 
 for file in $CONFIG_FILES; do
-    from_file="$SOURCE/$file"
+    from_file="$CONFIG/$file"
     to_file="$DESTINATION/$file"
 
-    backup_file "$to_file"
+    if [ "$BACKUP_FILES" == "true" ]; then
+        backup_file "$to_file"
+    fi
+
     install_file "$from_file" "$to_file"
 done
 
@@ -66,21 +98,30 @@ done
 #
 
 for file in $CONFIG_LOCALS; do
-    touch "$DESTINATION/$file"
+    from_file="$CONFIG/$file"
+    to_file="$DESTINATION/$file"
+
+    install_local_file "$from_file" "$to_file"
 done
 
 #
-# Setup bashrc
+# Install scripts
 #
 
-bashrc_system="$DESTINATION/.bashrc"
-bashrc_main="$DESTINATION/.bashrc-main"
+mkdir -p "$HOME/bin"
 
-touch "$bashrc_system"
-echo "
-. \"$bashrc_main\"
+cd "$SCRIPTS"
 
-" >> "$bashrc_system"
+chmod 755 *
 
-say "DONE"
+for file in *; do
+    from_file="$SCRIPTS/$file"
+    to_file="$HOME/bin/$file"
 
+    install_file "$from_file" "$to_file"
+done
+
+
+echo
+echo "DONE"
+echo

@@ -38,4 +38,3 @@ case "$1" in
 
     *) find_node_modules ;;
 esac
-

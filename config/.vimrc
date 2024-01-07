@@ -5,8 +5,8 @@
 " Map leader
 let mapleader=","
 
-if !empty(glob("~/.vimrc-plugins"))
-    source ~/.vimrc-plugins
+if !empty(glob("~/.vimrc_plugins"))
+    source ~/.vimrc_plugins
 endif
 
 "==============================================================================

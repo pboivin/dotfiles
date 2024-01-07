@@ -15,13 +15,13 @@ function exec_vendor() {
 
     find . -name 'autoload.php' -print0 |
         while IFS= read -r -d '' line; do
-            local dirname_=$(dirname "$line")
+            local dir_name=$(dirname "$line")
 
-            if [ -d "$dirname_" ]; then
-                local basedirname_=$(basename "$dirname_")
+            if [ -d "$dir_name" ]; then
+                local base_dir_name=$(basename "$dir_name")
 
-                if [ "$basedirname_" == "vendor" ]; then
-                    $cmd "$dirname_"
+                if [ "$base_dir_name" == "vendor" ]; then
+                    $cmd "$dir_name"
                 fi
             fi
         done
@@ -55,4 +55,3 @@ case "$1" in
 
     *) find_vendor ;;
 esac
-
