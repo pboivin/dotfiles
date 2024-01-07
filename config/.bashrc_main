@@ -39,16 +39,18 @@ PROMPT_DATE='($(date +%H:%M:%S))'
 PROMPT_USER='\u@'"$(hostname)"
 PROMPT_LOCATION='\w'
 PROMPT_SYMBOL='\n$ '
+
 PS1="$(color_normal $COLOR_YELLOW)$PROMPT_DATE $PROMPT_USER : $(color_bold $COLOR_WHITE)$PROMPT_LOCATION $(color_clear)$PROMPT_SYMBOL"
+
 # Result:
 #    (12:34:56) pboivin@embee : ~/Workspace
 #    $ ...
 
 #=============================================================================
-# Aliases
+# Aliases and Helpers
 #=============================================================================
 
-## Platform-specific
+### Platform-specific ###
 
 if [ "$(uname)" == "Linux" ]; then
     alias ls='env ls -FC --color=auto --group-directories-first'
@@ -64,13 +66,12 @@ if [ "$(uname)" == "Darwin" ]; then
     alias files='open -a finder .'
 fi
 
-## Shell
+### Navigation ###
 
 alias l='ls -lh'
 alias ll='l -A'
 alias la='ls -A'
 alias l2='ls *'
-alias cl='clear && l'
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -123,34 +124,32 @@ function did {
     history | grep -i "$1"
 }
 
-## Editors
+### Editors ###
 
 alias vimm='vim -u NONE'
 alias vimt='vim -c NERDTreeTabsOpen'
 
-## Edit files
+### Edit files ###
 
 alias bashrc="vim -p ~/.bashrc*"
 alias bashrc-reload="source $HOME/.bashrc"
 alias vimrc="vim -p ~/.vimrc*"
-alias vimvim="cd $HOME/.vim && vim"
-alias vimsnippets="find $HOME/.vim -iname '*snippets*' | vim -"
 
-## Git
+### Git ###
 
-alias gd="git diff"
-alias gdh="git diff HEAD"
-alias gp="git log -p"
-alias gl="git log"
-alias gll="git log --name-status"
-alias gl1="git log --oneline"
-alias gs="git status"
 alias gb="git branch"
 alias gba="git branch -a"
-alias gk="git checkout"
-alias git-initial="git init . && git add . && git commit -am Initial"
 alias gcl="_git_clone_cd"
+alias gd="git diff"
+alias gdh="git diff HEAD"
 alias gfa="git fetch --all"
+alias git-initial="git init . && git add . && git commit -am Initial"
+alias gk="git checkout"
+alias gl="git log"
+alias gl1="git log --oneline"
+alias gll="git log --name-status"
+alias gp="git log -p"
+alias gs="git status"
 
 function _git_clone_cd() {
     local repo="$1"
@@ -159,26 +158,26 @@ function _git_clone_cd() {
     git clone "$repo" && cd "$dir"
 }
 
-## Vagrant
+### Vagrant ###
 
-alias vus="vagrant up && vagrant ssh"
-alias vuss="sudo echo && vagrant up && vagrant ssh"
-alias vup="vagrant up"
+alias vagrant-stop-all="vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I {} VBoxManage controlvm {} poweroff"
 alias vpr="vagrant up --provision"
 alias vsh="vagrant ssh"
-alias vagrant-stop-all="vboxmanage list runningvms | sed -r 's/.*\{(.*)\}/\1/' | xargs -L1 -I {} VBoxManage controlvm {} poweroff"
+alias vup="vagrant up"
+alias vus="vagrant up && vagrant ssh"
+alias vuss="sudo echo && vagrant up && vagrant ssh"
 
-
-## Places
+### Places ###
 
 alias dotfiles="cd $HOME/Workspace/dotfiles"
 alias wo="_workspace"
 
-# usage:
-#   wo
-#   wo -t
-#   wo -t new_temp_dir
 function _workspace() {
+    # usage:
+    #   wo
+    #   wo -t
+    #   wo -t new_temp_dir
+
     if [ "$1" == "" ]; then
         cd "$HOME/Workspace"
         return
@@ -195,34 +194,18 @@ function _workspace() {
     fi
 }
 
-
-## Misc
+### Misc ###
 
 alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"
-#alias rg="ranger"
 alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
-alias ssh-hosts="cat $HOME/.ssh/config | grep 'Host ' | egrep -v '^#' | sort"
 alias tmux="TERM=screen-256color-bce tmux"
-alias php-class-map="ag --group '(class |interface |trait |function )'"
-alias cf="catfish ."
 
 #=============================================================================
-# Helpers
-#=============================================================================
-
-if [ -d ~/.bash-helpers ]; then
-    for f in ~/.bash-helpers/*; do
-        . "$f"
-    done
-fi
-
-#=============================================================================
-# Local config
+# Extra
 #=============================================================================
 
 if [ -e ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
-
