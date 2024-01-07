@@ -4,7 +4,7 @@ BACKUP_FILES="false" # otherwise existing files will be skipped
 LINK_FILES="true" # otherwise files will be copied
 
 CONFIG="$PWD/config"
-SCRIPTS="$PWD/scripts"
+SCRIPTS="$PWD/bin"
 DESTINATION="$HOME"
 CONFIG_FILES=".bashrc_main .gitconfig .gitignore_global .tmux.conf .vimrc"
 CONFIG_LOCALS=".bashrc_local .vimrc_local"
