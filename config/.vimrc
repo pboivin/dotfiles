@@ -19,15 +19,11 @@ set nocompatible
 " Use unicode
 set encoding=utf-8
 
-" Unix line endings
+" Unix line endings. Alternatively: set fileformat=dos
 set fileformat=unix
-" Alternatively,
-" > set fileformat=dos
 
-" No in-place "file~" backups
+" No in-place file~ backups. Alternatively, set a backup directory: set backupdir=~/.vim/backup
 set nobackup
-" Alternatively, set a backup directory
-" > set backupdir=~/.vim/backup
 
 " Enable swap files
 set swapfile
@@ -76,9 +72,9 @@ set confirm
 set t_vb=
 
 " Mouse integration
-" > a: All modes
-" > i: Insert mode only
-" > n: Normal mode only (useful for copy/pasting with Xorg buffer while in insert mode)
+"   a: All modes
+"   i: Insert mode only
+"   n: Normal mode only (useful for copy/pasting with Xorg buffer while in insert mode)
 set mouse=n
 
 " Quickly time out on keycodes, but never time out on mappings
@@ -104,7 +100,7 @@ set tabstop=8
 set wrap
 set linebreak
 
-" Indent wrapped lines, add 2 more spaces 
+" Indent wrapped lines, add 2 more spaces
 set breakindent
 let &showbreak='  '
 
@@ -112,11 +108,11 @@ let &showbreak='  '
 "set iskeyword+=\-
 
 " Preserve selection when un/indenting lines
-vmap     >    >gv
-vmap     <    <gv
+vmap  >  >gv
+vmap  <  <gv
 
 " Deactivate exmode shortcut
-noremap  Q    <ESC>
+noremap  Q  <ESC>
 
 "==============================================================================
 " Copy/Paste
@@ -155,11 +151,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 nohl
 
 " Center window on search result
-nnoremap  n    nzz
-nnoremap  N    Nzz
+nnoremap  n  nzz
+nnoremap  N  Nzz
 
 " Search for visually selected text
-vnoremap  //   y/<c-r>"<cr>
+vnoremap  //  y/<c-r>"<cr>
 
 " Grep files in cwd, recursive
 function! GrepFn(search)
@@ -179,9 +175,9 @@ command! -nargs=1 GrepHelp call GrepHelpFn("<args>")
 " Custom Movements
 "==============================================================================
 
-"----------
+"--------
 " Arrows
-"----------
+"--------
 
 " Go to ^ and $
 noremap  <S-Left>     0
@@ -201,9 +197,9 @@ noremap  <C-Up>       15kzz
 noremap  <C-Left>     b
 noremap  <C-Right>    w
 
-"---------------------
+"-------------------
 " Standard mappings
-"---------------------
+"-------------------
 
 " Faster movements up and down
 noremap  <C-d>        4j
@@ -216,9 +212,9 @@ noremap  <C-k>        4k
 noremap  <C-f>        15jzz
 noremap  <C-b>        15kzz
 
-"----------------------------
+"--------------------------
 " Buffer, tabs and windows
-"----------------------------
+"--------------------------
 
 " Buffer switching
 noremap   <leader>b0     :bfirst<CR>
@@ -267,9 +263,9 @@ command! SpellOff setlocal nospell
 " Custom Commands and Mappings
 "==============================================================================
 
-"--------------
+"------------
 " Whitespace
-"--------------
+"------------
 
 function! TabsToSpacesFn()
     let l:count = 0
@@ -319,17 +315,17 @@ noremap <LEADER>s2  :SetSoftTabs 2<CR>:RefreshIndentGuides<CR>
 noremap <LEADER>s4  :SetSoftTabs 4<CR>:RefreshIndentGuides<CR>
 noremap <LEADER>s8  :SetHardTabs 8<CR>:RefreshIndentGuides<CR>
 
-"-----------
+"---------
 " Quoting
-"-----------
+"---------
 
 command! -range SingleToDoubleQuotes '<,'>s/'/"/g
 
 command! -range DoubleToSingleQuotes '<,'>s/"/'/g
 
-"-----------------------------
+"---------------------------
 " Autoindent + Virtual Edit
-"-----------------------------
+"---------------------------
 "
 " Useful mode for drawing tables or ascii art.
 "
@@ -346,9 +342,9 @@ function! AveOffFn()
 endfunction
 command! NoAve call AveOffFn()
 
-"-----------
+"---------
 " Folding
-"-----------
+"---------
 
 " FI - Activate folding by indent. Close all folds.
 function! FoldIndentFn()
@@ -371,9 +367,9 @@ function! FoldManualFn()
 endfunction
 command! FM call FoldManualFn()
 
-"---------------
+"-------------
 " File Format
-"---------------
+"-------------
 "
 " Reference: http://vim.wikia.com/wiki/File_format
 "
@@ -393,9 +389,9 @@ function! UnixToDosFn()
 endfunction
 command! UnixToDos call UnixToDosFn()
 
-"---------------
+"-------------
 " Code Format
-"---------------
+"-------------
 
 " Set filetype for auto formatting (=)
 function! SetFormatFn(filetype)
@@ -413,9 +409,9 @@ command! FormatJS %!js-beautify --type js
 command! FormatCSS %!js-beautify --type css
 command! FormatHTML %!js-beautify --type html
 
-"--------
+"------
 " Misc
-"--------
+"------
 
 " WR - Toggle line wrapping
 command! WR set wrap!
@@ -442,9 +438,9 @@ noremap  <C-s>     :w<CR>
 " Custom Commands and Mappings -- Plugins
 "==============================================================================
 
-"------
+"----
 " AG
-"------
+"----
 
 " AG - Search content
 command! -nargs=* AG Ag <args>
@@ -455,16 +451,16 @@ command! AS AgFromSearch
 " AF - Search file names
 command! -nargs=* AF AgFile <args>
 
-"-------------------
+"-----------------
 " NerdTree / Tabs
-"-------------------
+"-----------------
 
 " NF - Highlight current file in Nerd Tree
 command! NF NERDTreeTabsFind
 
-"------------------
+"----------------
 " Git / Fugitive
-"------------------
+"----------------
 
 " GP - Get the output of 'git log -p' for current file. Opens in new tab.
 function! GitLogPatchFn()
@@ -492,7 +488,7 @@ au BufRead,BufNewFile *.antlers.html set filetype=handlebars
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 "==============================================================================
-" Extra config. files
+" Extra
 "==============================================================================
 
 " Load ~/.vimrc_local if it exists
