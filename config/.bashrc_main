@@ -130,6 +130,7 @@ function did {
 
 ### Editors ###
 
+alias nv='nvim'
 alias vimm='vim -u NONE'
 alias vimt='vim -c NERDTreeTabsOpen'
 
