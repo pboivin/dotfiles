@@ -201,6 +201,7 @@ function _workspace() {
 
 ### Misc ###
 
+alias a="php artisan"
 alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"

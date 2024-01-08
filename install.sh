@@ -6,7 +6,7 @@ LINK_FILES="true" # otherwise files will be copied
 CONFIG="$PWD/config"
 SCRIPTS="$PWD/bin"
 DESTINATION="$HOME"
-CONFIG_FILES=".bashrc_main .gitconfig .gitignore_global .tmux.conf .vimrc"
+CONFIG_FILES=".bashrc_main .gitconfig .gitignore_global .tmux.conf .vimrc .vimrc_plugins"
 CONFIG_LOCALS=".bashrc_local .vimrc_local"
 
 #
