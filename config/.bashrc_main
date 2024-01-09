@@ -140,6 +140,33 @@ alias bashrc="vim -p ~/.bashrc*"
 alias bashrc-reload="source $HOME/.bashrc"
 alias vimrc="vim -p ~/.vimrc*"
 
+### Places ###
+
+alias dotfiles="cd $HOME/Workspace/dotfiles"
+alias wo="_workspace"
+
+function _workspace() {
+    # usage:
+    #   wo
+    #   wo -t
+    #   wo -t new_temp_dir
+
+    if [ "$1" == "" ]; then
+        cd "$HOME/Workspace"
+        return
+    fi
+
+    if [ "$1" == "-t" ]; then
+        if [ "$2" == "" ]; then
+            cd "$HOME/Workspace/tmp"
+        else
+            mkdir -p "$HOME/Workspace/tmp/$2"
+            cd "$HOME/Workspace/tmp/$2"
+        fi
+        return
+    fi
+}
+
 ### Git ###
 
 alias gb="git branch"
@@ -172,41 +199,25 @@ alias vup="vagrant up"
 alias vus="vagrant up && vagrant ssh"
 alias vuss="sudo echo && vagrant up && vagrant ssh"
 
-### Places ###
+### PHP ###
 
-alias dotfiles="cd $HOME/Workspace/dotfiles"
-alias wo="_workspace"
+alias a="php artisan"
+alias pu='./vendor/bin/phpunit --stop-on-failure'
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias stan='./vendor/bin/phpstan'
 
-function _workspace() {
-    # usage:
-    #   wo
-    #   wo -t
-    #   wo -t new_temp_dir
-
-    if [ "$1" == "" ]; then
-        cd "$HOME/Workspace"
-        return
-    fi
-
-    if [ "$1" == "-t" ]; then
-        if [ "$2" == "" ]; then
-            cd "$HOME/Workspace/tmp"
-        else
-            mkdir -p "$HOME/Workspace/tmp/$2"
-            cd "$HOME/Workspace/tmp/$2"
-        fi
-        return
-    fi
+function composer-link() {
+    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
 }
 
 ### Misc ###
 
-alias a="php artisan"
 alias af="ag -g"
 alias flatpak-list-updates="flatpak remote-ls --updates"
 alias man-list="man -k . | less"
 alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias tmux="TERM=screen-256color-bce tmux"
+alias zl='z -l'
 
 #=============================================================================
 # Extra
@@ -215,3 +226,4 @@ alias tmux="TERM=screen-256color-bce tmux"
 if [ -e ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
+
