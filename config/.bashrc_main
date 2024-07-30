@@ -10,9 +10,13 @@
 #=============================================================================
 
 export EDITOR="vim"
+export GOPATH="$HOME/Workspace/go"
 
 if [ -e "$HOME/.config/composer/vendor/bin" ]; then
     PATH="$HOME/.config/composer/vendor/bin:$PATH"
+fi
+if [ -e "$GOPATH/bin" ]; then
+    PATH="$GOPATH/bin:$PATH"
 fi
 export PATH="$HOME/bin:$PATH"
 
@@ -180,7 +184,8 @@ alias gk="git checkout"
 alias gl="git log"
 alias gl1="git log --oneline"
 alias gll="git log --name-status"
-alias gp="git log -p"
+alias glp="git log -p"
+#alias gp="git log -p" ### To be replaced by 'git pull'
 alias gs="git status"
 
 function _git_clone_cd() {
@@ -202,6 +207,7 @@ alias vuss="sudo echo && vagrant up && vagrant ssh"
 ### PHP ###
 
 alias a="php artisan"
+alias mfs="php artisan migrate:fresh --seed"
 alias pu='./vendor/bin/phpunit --stop-on-failure'
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias stan='./vendor/bin/phpstan'
