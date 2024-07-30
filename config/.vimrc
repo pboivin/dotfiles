@@ -96,6 +96,9 @@ set expandtab
 " Size of a hard tabstop
 set tabstop=8
 
+" Autoindent new lines
+set ai
+
 " Wrap long lines, don't break words
 set wrap
 set linebreak
