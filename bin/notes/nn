@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+set -e
+
+function help() {
+    echo
+    echo "Usage: nn [options] Title goes here"
+    echo
+    echo "  Options:"
+    echo "    -h    Show help"
+    echo "    -t    Do not include date in filename"
+    echo
+}
+
+function handle_option() {
+    if [ "$1" == "-h" ]; then
+        help
+        exit 0
+    fi
+
+    if [ "$1" == "-t" ]; then
+        DATE_IN_FILENAME=no
+        return
+    fi
+
+    echo "Error: unknown option $1"
+    exit 1
+}
+
+
+#
+# Handle options
+#
+
+for arg in $@; do
+    prefix=${1:0:1}
+    if [ "$prefix" == "-" ]; then
+        handle_option "$1"
+        shift
+    else
+        break
+    fi
+done
+
+
+#
+# Prepare file
+#
+
+SHORTDATE=$(date +%Y%m%d)
+DATE=$(date +%Y-%m-%d)
+ARGS="$@"
+TITLE="${ARGS:-Note}"
+
+if [ "$DATE_IN_FILENAME" == "no" ]; then
+    BASENAME="$TITLE"
+else
+    BASENAME="$SHORTDATE $TITLE"
+fi
+
+if [ "$ARGS" != "" ]; then
+    HAS_TITLE=yes
+    FILE=$(echo $BASENAME \
+        | tr '[:upper:]' '[:lower:]' \
+        | sed 's/[^[:alnum:][:space:]]//g' \
+        | sed 's/[[:space:]]/-/g')
+    FILE="${FILE}.md"
+else
+    TITLE="$DATE"
+    FILE="${SHORTDATE}.md"
+fi
+
+
+#
+# Create file
+#
+
+if [ ! -e "$FILE" ]; then
+{
+    echo
+    echo "# $TITLE"
+    [ "$HAS_TITLE" == "yes" ] && echo
+    [ "$HAS_TITLE" == "yes" ] && echo "$DATE"
+    echo
+    echo "---"
+    echo
+    echo
+} > "$FILE"
+fi
+
+
+#
+# Edit file
+#
+
+if [ "$TESTING" == "yes" ]; then
+    echo vim "$FILE"
+else
+    vim "$FILE"
+fi
+
