@@ -17,3 +17,5 @@
 
 [alias]
     graph = "log --color --graph --decorate --oneline --branches --remotes --tags"
+[init]
+	defaultBranch = main
