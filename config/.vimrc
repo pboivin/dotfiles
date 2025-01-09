@@ -227,6 +227,7 @@ noremap   <leader>bl     :ls<CR>
 noremap   <leader>bdd    :bd<CR>
 noremap   <leader>bda    :%bd<CR>
 noremap   <leader>b      :BuffergatorOpen<CR>
+noremap   <S-B>          :bnext<CR>
 
 " Tab switching
 nnoremap  <leader>tp     :tabprev<CR>
@@ -234,15 +235,13 @@ nnoremap  <leader>tn     :tabnext<CR>
 nnoremap  <leader>tt     :tabnew<CR>
 nnoremap  <leader>te     :tabnew<CR>:e .<CR>
 nnoremap  <leader>t0     :tabmove 0<CR>
+nnoremap  <S-T>          :tabnext<CR>
 
-" Toggle Next Buffer
-noremap   <S-B>  :bnext<CR>
-
-" Toggle Next Window
-noremap   <S-W>  <C-W><C-W>
-
-" Toggle Next Tab
-nnoremap  <S-T>  :tabnext<CR>
+nnoremap  <A-left>       <C-W><left>
+nnoremap  <A-right>      <C-W><right>
+nnoremap  <A-up>         <C-W><up>
+nnoremap  <A-down>       <C-W><down>
+noremap   <S-W>          <C-W><C-W>
 
 "==============================================================================
 " GUI

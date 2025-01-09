@@ -24,7 +24,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'brooth/far.vim'
-Plug 'ap/vim-buftabline'
 
 "
 " Snippets and code completion
