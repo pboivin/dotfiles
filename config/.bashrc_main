@@ -15,10 +15,12 @@ export GOPATH="$HOME/Workspace/go"
 if [ -e "$HOME/.config/composer/vendor/bin" ]; then
     PATH="$HOME/.config/composer/vendor/bin:$PATH"
 fi
+
 if [ -e "$GOPATH/bin" ]; then
     PATH="$GOPATH/bin:$PATH"
 fi
-export PATH="$HOME/bin:$PATH"
+
+export PATH
 
 #=============================================================================
 # Prompt
@@ -148,6 +150,7 @@ alias vimrc="vim -p ~/.vimrc*"
 
 alias dotfiles="cd $HOME/Workspace/dotfiles"
 alias wo="_workspace"
+alias wor="_workspace && rg"
 
 function _workspace() {
     # usage:
@@ -185,7 +188,6 @@ alias gl="git log"
 alias gl1="git log --oneline"
 alias gll="git log --name-status"
 alias glp="git log -p"
-#alias gp="git log -p" ### To be replaced by 'git pull'
 alias gs="git status"
 
 function _git_clone_cd() {
@@ -224,6 +226,16 @@ alias man-list="man -k . | less"
 alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias tmux="TERM=screen-256color-bce tmux"
 alias zl='z -l'
+
+### Notes ###
+
+alias nf="find . -type f -name '*.txt' -or -name '*.md' | sort"
+
+function ng() {
+    find . -type f -name '*.txt' -or -name '*.md' |\
+        sort |\
+        while read f; do grep -H $@ "$f"; done
+}
 
 #=============================================================================
 # Extra
