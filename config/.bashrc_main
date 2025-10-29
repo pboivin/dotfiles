@@ -206,6 +206,18 @@ alias vup="vagrant up"
 alias vus="vagrant up && vagrant ssh"
 alias vuss="sudo echo && vagrant up && vagrant ssh"
 
+### Docker ###
+
+function docker-stop-all() {
+    if [ "$(docker ps | wc -l)" == "1" ]; then
+        echo "No containers running"
+    else
+        echo "Stopping containers..."
+        echo
+        docker stop $(docker ps | awk '{ print $1 }' | tail -n +2)
+    fi
+}
+
 ### PHP ###
 
 alias a="php artisan"
@@ -226,6 +238,11 @@ alias man-list="man -k . | less"
 alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias tmux="TERM=screen-256color-bce tmux"
 alias zl='z -l'
+alias repo-tree="tree --dirsfirst | sed 's/^/> /g'"
+
+function flatten() {
+    echo $@ | xargs -L999999 echo
+}
 
 ### Notes ###
 
