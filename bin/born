@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+function print_usage() {
+    echo "Usage: born from_year [to_year]"
+}
+
+FROM_YEAR="$1"
+if [ "$FROM_YEAR" == "" ]; then
+    print_usage
+    exit 1
+fi
+
+TO_YEAR="$2"
+if [ "$TO_YEAR" == "" ]; then
+    TO_YEAR=$(date "+%Y")
+fi
+
+AGE=$(( $TO_YEAR - $FROM_YEAR ))
+
+echo "Born in $FROM_YEAR, turning $AGE in $TO_YEAR."
+
+exit 0
+
