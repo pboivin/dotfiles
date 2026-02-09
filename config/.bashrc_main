@@ -239,6 +239,7 @@ alias rg='ranger --choosedir=/tmp/_ranger_dir && cd "$(cat /tmp/_ranger_dir)"'
 alias tmux="TERM=screen-256color-bce tmux"
 alias zl='z -l'
 alias repo-tree="tree --dirsfirst | sed 's/^/> /g'"
+alias bat="batcat"
 
 function flatten() {
     echo $@ | xargs -L999999 echo
